@@ -305,7 +305,7 @@ function updateAnalysisSlideUI() {
 
 // Global slide navigation for the entire Buildeo tab
 function changeBuildeoTabSlide(direction) {
-  activeBuildeoTabSlide = (activeBuildeoTabSlide + direction + 3) % 3;
+  activeBuildeoTabSlide = (activeBuildeoTabSlide + direction + 4) % 4;
   updateBuildeoTabSlideUI();
 }
 
@@ -316,9 +316,10 @@ function setBuildeoTabSlide(slideIndex) {
 
 function updateBuildeoTabSlideUI() {
   const titles = [
-    '<i class="lucide-icon" data-lucide="swords"></i> Personalizar Movimientos (Paso 1 / 3)',
-    '<i class="lucide-icon" data-lucide="wrench"></i> Configurar Habilidades y Stats (Paso 2 / 3)',
-    '<i class="lucide-icon" data-lucide="package"></i> Equipar Objetos Competitivos (Paso 3 / 3)'
+    '<i class="lucide-icon" data-lucide="swords"></i> Personalizar Movimientos (Paso 1 / 4)',
+    '<i class="lucide-icon" data-lucide="zap"></i> Configurar Habilidad (Paso 2 / 4)',
+    '<i class="lucide-icon" data-lucide="compass"></i> Estadísticas y Naturaleza (Paso 3 / 4)',
+    '<i class="lucide-icon" data-lucide="package"></i> Equipar Objetos Competitivos (Paso 4 / 4)'
   ];
   
   const titleEl = document.getElementById("buildeo-section-title");
@@ -335,19 +336,18 @@ function updateBuildeoTabSlideUI() {
     }
   });
   
-
-  
-  // Update slide for all card tracks
+  // Update slide for all card tracks (width = 400%, shift = 25% per slide)
   for (let i = 0; i < 6; i++) {
     buildeoSlides[i] = activeBuildeoTabSlide;
     const card = document.querySelector(`.buildeo-card[data-slot="${i}"]`);
     if (card) {
       const track = card.querySelector('.buildeo-slider-track');
       if (track) {
-        track.style.transform = `translateX(-${activeBuildeoTabSlide * 33.333}%)`;
+        track.style.transform = `translateX(-${activeBuildeoTabSlide * 25}%)`;
       }
     }
   }
+  if (typeof lucide !== "undefined") lucide.createIcons();
 }
 
 
@@ -2479,6 +2479,164 @@ function getMegaStoneIdForPokemon(p) {
   return null;
 }
 
+/* --- POKÉMON NATURES DATABASE & MATRIX MODAL SYSTEM --- */
+const NATURES_DB = {
+  // Subir Ataque (+Atk)
+  "hardy": { key: "hardy", name: "Seria", EnglishName: "Hardy", plus: null, minus: null },
+  "lonely": { key: "lonely", name: "Huraña", EnglishName: "Lonely", plus: "atk", minus: "def" },
+  "adamant": { key: "adamant", name: "Firme", EnglishName: "Adamant", plus: "atk", minus: "spa" },
+  "naughty": { key: "naughty", name: "Pícara", EnglishName: "Naughty", plus: "atk", minus: "spd" },
+  "brave": { key: "brave", name: "Audaz", EnglishName: "Brave", plus: "atk", minus: "spe" },
+
+  // Subir Defensa (+Def)
+  "bold": { key: "bold", name: "Osada", EnglishName: "Bold", plus: "def", minus: "atk" },
+  "docile": { key: "docile", name: "Dócil", EnglishName: "Docile", plus: null, minus: null },
+  "impish": { key: "impish", name: "Agitada", EnglishName: "Impish", plus: "def", minus: "spa" },
+  "lax": { key: "lax", name: "Floja", EnglishName: "Lax", plus: "def", minus: "spd" },
+  "relaxed": { key: "relaxed", name: "Plácida", EnglishName: "Relaxed", plus: "def", minus: "spe" },
+
+  // Subir At. Esp. (+SpA)
+  "modest": { key: "modest", name: "Modesta", EnglishName: "Modest", plus: "spa", minus: "atk" },
+  "mild": { key: "mild", name: "Afable", EnglishName: "Mild", plus: "spa", minus: "def" },
+  "bashful": { key: "bashful", name: "Rara", EnglishName: "Bashful", plus: null, minus: null },
+  "rash": { key: "rash", name: "Alocada", EnglishName: "Rash", plus: "spa", minus: "spd" },
+  "quiet": { key: "quiet", name: "Mansa", EnglishName: "Quiet", plus: "spa", minus: "spe" },
+
+  // Subir Def. Esp. (+SpD)
+  "calm": { key: "calm", name: "Serena", EnglishName: "Calm", plus: "spd", minus: "atk" },
+  "gentle": { key: "gentle", name: "Amable", EnglishName: "Gentle", plus: "spd", minus: "def" },
+  "careful": { key: "careful", name: "Cauta", EnglishName: "Careful", plus: "spd", minus: "spa" },
+  "quirky": { key: "quirky", name: "Rara", EnglishName: "Quirky", plus: null, minus: null },
+  "sassy": { key: "sassy", name: "Grosera", EnglishName: "Sassy", plus: "spd", minus: "spe" },
+
+  // Subir Velocidad (+Spe)
+  "timid": { key: "timid", name: "Miedosa", EnglishName: "Timid", plus: "spe", minus: "atk" },
+  "hasty": { key: "hasty", name: "Activa", EnglishName: "Hasty", plus: "spe", minus: "def" },
+  "jolly": { key: "jolly", name: "Alegre", EnglishName: "Jolly", plus: "spe", minus: "spa" },
+  "naive": { key: "naive", name: "Ingenua", EnglishName: "Naive", plus: "spe", minus: "spd" },
+  "serious": { key: "serious", name: "Seria", EnglishName: "Serious", plus: null, minus: null }
+};
+
+const NATURE_MATRIX_ROWS = [
+  { statKey: "atk", label: "Ataque ⇡" },
+  { statKey: "def", label: "Defensa ⇡" },
+  { statKey: "spa", label: "At. Esp. ⇡" },
+  { statKey: "spd", label: "Def. Esp. ⇡" },
+  { statKey: "spe", label: "Velocidad ⇡" }
+];
+
+const NATURE_MATRIX_COLS = [
+  { statKey: "atk", label: "Ataque ⇣" },
+  { statKey: "def", label: "Defensa ⇣" },
+  { statKey: "spa", label: "At. Esp. ⇣" },
+  { statKey: "spd", label: "Def. Esp. ⇣" },
+  { statKey: "spe", label: "Velocidad ⇣" }
+];
+
+const NATURE_GRID_KEYS = [
+  ["hardy",   "lonely",  "adamant", "naughty", "brave"],
+  ["bold",    "docile",  "impish",  "lax",     "relaxed"],
+  ["modest",  "mild",    "bashful", "rash",    "quiet"],
+  ["calm",    "gentle",  "careful", "quirky",  "sassy"],
+  ["timid",   "hasty",   "jolly",   "naive",   "serious"]
+];
+
+function findNatureKeyByName(nameStr) {
+  if (!nameStr) return "hardy";
+  const clean = nameStr.toLowerCase().replace(/[^a-z0-9]/g, "");
+  if (!clean) return "hardy";
+
+  // 1. Direct match with key, EnglishName, or Spanish name
+  for (const [key, info] of Object.entries(NATURES_DB)) {
+    const cleanKey = key.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const cleanEn = info.EnglishName.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const cleanEs = info.name.toLowerCase().replace(/[^a-z0-9]/g, "");
+    if (cleanKey === clean || cleanEn === clean || cleanEs === clean) {
+      return key;
+    }
+  }
+
+  // 2. Partial search match
+  for (const [key, info] of Object.entries(NATURES_DB)) {
+    const cleanKey = key.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const cleanEn = info.EnglishName.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const cleanEs = info.name.toLowerCase().replace(/[^a-z0-9]/g, "");
+    if (clean.includes(cleanKey) || clean.includes(cleanEn) || clean.includes(cleanEs) || cleanEn.includes(clean) || cleanEs.includes(clean)) {
+      return key;
+    }
+  }
+
+  return "hardy";
+}
+
+let activeNatureSelectSlotIndex = -1;
+
+function openNatureModal(slotIndex) {
+  activeNatureSelectSlotIndex = slotIndex;
+  const modal = document.getElementById("nature-modal");
+  if (!modal) return;
+  
+  renderNatureMatrix();
+  modal.classList.add("active");
+}
+
+function closeNatureModal(event) {
+  if (event) event.stopPropagation();
+  const modal = document.getElementById("nature-modal");
+  if (modal) modal.classList.remove("active");
+  activeNatureSelectSlotIndex = -1;
+}
+
+function selectNature(natureKey) {
+  if (activeNatureSelectSlotIndex < 0 || activeNatureSelectSlotIndex >= 6) return;
+  const p = activeTeam[activeNatureSelectSlotIndex];
+  if (!p) return;
+  
+  p.selectedNature = natureKey;
+  saveTeamToLocalStorage();
+  renderBuildeoTab();
+  renderNatureMatrix();
+  if (typeof lucide !== "undefined") lucide.createIcons();
+  showToast(`Naturaleza cambiada a ${NATURES_DB[natureKey].name} (${NATURES_DB[natureKey].EnglishName})`, "info");
+}
+
+function renderNatureMatrix() {
+  const container = document.getElementById("nature-matrix-body");
+  if (!container) return;
+  
+  const currentPoke = activeTeam[activeNatureSelectSlotIndex];
+  const currentNatureKey = currentPoke ? (currentPoke.selectedNature || "hardy") : "hardy";
+  
+  let html = "";
+  
+  NATURE_MATRIX_ROWS.forEach((row, rIdx) => {
+    html += `
+      <div class="nature-matrix-row">
+        <div class="nature-row-label">${row.label}</div>
+    `;
+    
+    NATURE_MATRIX_COLS.forEach((col, cIdx) => {
+      const nKey = NATURE_GRID_KEYS[rIdx][cIdx];
+      const nInfo = NATURES_DB[nKey];
+      const isActive = (nKey === currentNatureKey);
+      
+      html += `
+        <button 
+          class="nature-cell-btn ${isActive ? 'active' : ''}" 
+          onclick="selectNature('${nKey}')"
+          title="${nInfo.name} (${nInfo.EnglishName}): +${row.statKey.toUpperCase()} / -${col.statKey.toUpperCase()}"
+        >
+          ${nInfo.name}
+        </button>
+      `;
+    });
+    
+    html += `</div>`;
+  });
+  
+  container.innerHTML = html;
+}
+
 let activeItemSelectSlotIndex = -1;
 let selectedItemCategory = "all";
 
@@ -2829,21 +2987,72 @@ function renderBuildeoTab() {
       const recommended = getRecommendedItems(p, i);
       
       const stats = p.baseStats || { hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0 };
+      const natureKey = p.selectedNature || "hardy";
+      const natureInfo = NATURES_DB[natureKey] || NATURES_DB["hardy"];
       
-      let speedText = stats.spe;
-      if (equippedItemId === "choice-scarf") {
-        speedText = `${Math.floor(stats.spe * 1.5)} <span style="color: var(--accent-green); font-size: 0.65rem;">(+50% Pañuelo)</span>`;
+      let atkVal = stats.atk;
+      let atkExtra = "";
+      if (natureInfo.plus === "atk") {
+        atkVal = Math.floor(stats.atk * 1.1);
+        atkExtra = `<span style="color: #4ade80; font-size: 0.65rem; font-weight: bold;">(▲)</span>`;
+      } else if (natureInfo.minus === "atk") {
+        atkVal = Math.floor(stats.atk * 0.9);
+        atkExtra = `<span style="color: #f87171; font-size: 0.65rem; font-weight: bold;">(▼)</span>`;
       }
-      
-      let spdText = stats.spd;
-      if (equippedItemId === "assault-vest") {
-        spdText = `${Math.floor(stats.spd * 1.5)} <span style="color: var(--accent-green); font-size: 0.65rem;">(+50% Chaleco)</span>`;
+
+      let defVal = stats.def;
+      let defExtra = "";
+      if (natureInfo.plus === "def") {
+        defVal = Math.floor(stats.def * 1.1);
+        defExtra = `<span style="color: #4ade80; font-size: 0.65rem; font-weight: bold;">(▲)</span>`;
+      } else if (natureInfo.minus === "def") {
+        defVal = Math.floor(stats.def * 0.9);
+        defExtra = `<span style="color: #f87171; font-size: 0.65rem; font-weight: bold;">(▼)</span>`;
       }
-      
-      let defText = stats.def;
       if (equippedItemId === "eviolite" && (p.evos && p.evos.length > 0 || p.tier === "NFE" || p.tier === "LC")) {
-        defText = `${Math.floor(stats.def * 1.5)} <span style="color: var(--accent-green); font-size: 0.65rem;">(+50%)</span>`;
-        spdText = `${Math.floor(stats.spd * 1.5)} <span style="color: var(--accent-green); font-size: 0.65rem;">(+50% Mineral)</span>`;
+        defVal = Math.floor(defVal * 1.5);
+        defExtra += `<span style="color: var(--accent-green); font-size: 0.65rem;">(+50%)</span>`;
+      }
+
+      let spaVal = stats.spa;
+      let spaExtra = "";
+      if (natureInfo.plus === "spa") {
+        spaVal = Math.floor(stats.spa * 1.1);
+        spaExtra = `<span style="color: #4ade80; font-size: 0.65rem; font-weight: bold;">(▲)</span>`;
+      } else if (natureInfo.minus === "spa") {
+        spaVal = Math.floor(stats.spa * 0.9);
+        spaExtra = `<span style="color: #f87171; font-size: 0.65rem; font-weight: bold;">(▼)</span>`;
+      }
+
+      let spdVal = stats.spd;
+      let spdExtra = "";
+      if (natureInfo.plus === "spd") {
+        spdVal = Math.floor(stats.spd * 1.1);
+        spdExtra = `<span style="color: #4ade80; font-size: 0.65rem; font-weight: bold;">(▲)</span>`;
+      } else if (natureInfo.minus === "spd") {
+        spdVal = Math.floor(stats.spd * 0.9);
+        spdExtra = `<span style="color: #f87171; font-size: 0.65rem; font-weight: bold;">(▼)</span>`;
+      }
+      if (equippedItemId === "assault-vest") {
+        spdVal = Math.floor(spdVal * 1.5);
+        spdExtra += `<span style="color: var(--accent-green); font-size: 0.65rem;">(+50% Chaleco)</span>`;
+      } else if (equippedItemId === "eviolite" && (p.evos && p.evos.length > 0 || p.tier === "NFE" || p.tier === "LC")) {
+        spdVal = Math.floor(spdVal * 1.5);
+        spdExtra += `<span style="color: var(--accent-green); font-size: 0.65rem;">(+50% Mineral)</span>`;
+      }
+
+      let speVal = stats.spe;
+      let speExtra = "";
+      if (natureInfo.plus === "spe") {
+        speVal = Math.floor(stats.spe * 1.1);
+        speExtra = `<span style="color: #4ade80; font-size: 0.65rem; font-weight: bold;">(▲)</span>`;
+      } else if (natureInfo.minus === "spe") {
+        speVal = Math.floor(stats.spe * 0.9);
+        speExtra = `<span style="color: #f87171; font-size: 0.65rem; font-weight: bold;">(▼)</span>`;
+      }
+      if (equippedItemId === "choice-scarf") {
+        speVal = Math.floor(speVal * 1.5);
+        speExtra += `<span style="color: var(--accent-green); font-size: 0.65rem;">(+50% Pañuelo)</span>`;
       }
       
       card.innerHTML = `
@@ -2860,22 +3069,22 @@ function renderBuildeoTab() {
         </div>
         
         <div class="buildeo-slider-viewport">
-          <div class="buildeo-slider-track" style="transform: translateX(-${activeBuildeoTabSlide * 33.333}%); width: 300%;">
+          <div class="buildeo-slider-track" style="transform: translateX(-${activeBuildeoTabSlide * 25}%); width: 400%;">
             
-            <!-- DIAPOSITIVA 0: MOVIMIENTOS -->
-            <div class="buildeo-slide" style="width: 33.333%;">
+            <!-- DIAPOSITIVA 0 (1/4): MOVIMIENTOS -->
+            <div class="buildeo-slide" style="width: 25%;">
               <div class="buildeo-ability-section">
                 <span class="buildeo-section-label">Movimientos Pokémon</span>
-                <div class="buildeo-moves-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem; width: 100%; margin-top: 0.4rem;">
+                <div class="buildeo-moves-list">
                   ${Array.from({ length: 4 }).map((_, moveIdx) => {
                     const moveId = p.selectedMoves && p.selectedMoves[moveIdx];
                     const moveName = moveId ? (MOVES_DB[moveId] || moveId) : "-- Seleccionar --";
                     const selectedClass = moveId ? "selected" : "";
                     const moveDesc = moveId ? (MOVES_DESC[moveId] || "Sin descripción disponible.") : "Selecciona un ataque para este slot.";
                     return `
-                      <button class="pcr-move-btn ${selectedClass}" onclick="openMovesModal(${i}, ${moveIdx})" title="${moveDesc}" style="width: 100%; text-align: left; display: flex; justify-content: space-between; align-items: center;">
+                      <button class="pcr-move-btn ${selectedClass}" onclick="openMovesModal(${i}, ${moveIdx})" title="${moveDesc}">
                         <span>${moveName}</span>
-                        <i data-lucide="chevron-right" style="width: 12px; height: 12px; opacity: 0.5;"></i>
+                        <i data-lucide="chevron-right" style="width: 12px; height: 12px; opacity: 0.5; flex-shrink: 0;"></i>
                       </button>
                     `;
                   }).join("")}
@@ -2883,38 +3092,11 @@ function renderBuildeoTab() {
               </div>
             </div>
             
-            <!-- DIAPOSITIVA 1: HABILIDADES Y STATS -->
-            <div class="buildeo-slide" style="width: 33.333%;">
-              <div class="buildeo-stats">
-                <div class="stat-item">
-                  <span class="stat-label">PS</span>
-                  <span class="stat-value">${stats.hp}</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-label">Atk</span>
-                  <span class="stat-value">${stats.atk}</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-label">Def</span>
-                  <span class="stat-value">${defText}</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-label">Atk Sp</span>
-                  <span class="stat-value">${stats.spa}</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-label">Def Sp</span>
-                  <span class="stat-value">${spdText}</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-label">Vel</span>
-                  <span class="stat-value">${speedText}</span>
-                </div>
-              </div>
-              
+            <!-- DIAPOSITIVA 1 (2/4): HABILIDADES -->
+            <div class="buildeo-slide" style="width: 25%;">
               <div class="buildeo-ability-section">
-                <span class="buildeo-section-label">Habilidad</span>
-                <div class="ability-selector-group">
+                <span class="buildeo-section-label">Habilidad Pokémon</span>
+                <div class="ability-selector-group" style="display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.4rem;">
                   ${Object.entries(abilities).map(([key, name]) => {
                     const isActive = name === selectedAbilityName;
                     const isHidden = key === "H";
@@ -2924,17 +3106,63 @@ function renderBuildeoTab() {
                         class="ability-badge-btn ${isActive ? "active" : ""}" 
                         data-ability-key="${key}"
                         onclick="selectAbility(${i}, '${key}')"
+                        style="width: 100%; justify-content: space-between; display: flex; align-items: center; padding: 0.45rem 0.65rem;"
                       >
-                        ${esName}${isHidden ? `<span class="ability-hidden-badge">Oculta</span>` : ""}
+                        <span style="font-weight: 600;">${esName}</span>
+                        ${isHidden ? `<span class="ability-hidden-badge">Oculta</span>` : ""}
                       </button>
                     `;
                   }).join("")}
                 </div>
               </div>
             </div>
+
+            <!-- DIAPOSITIVA 2 (3/4): ESTADÍSTICAS Y NATURALEZA -->
+            <div class="buildeo-slide" style="width: 25%;">
+              <div class="buildeo-stats">
+                <div class="stat-item">
+                  <span class="stat-label">PS</span>
+                  <span class="stat-value">${stats.hp}</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Atk</span>
+                  <span class="stat-value">${atkVal} ${atkExtra}</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Def</span>
+                  <span class="stat-value">${defVal} ${defExtra}</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Atk Sp</span>
+                  <span class="stat-value">${spaVal} ${spaExtra}</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Def Sp</span>
+                  <span class="stat-value">${spdVal} ${spdExtra}</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Vel</span>
+                  <span class="stat-value">${speVal} ${speExtra}</span>
+                </div>
+              </div>
+
+              <div class="buildeo-ability-section" style="margin-top: 0.5rem;">
+                <span class="buildeo-section-label">Naturaleza</span>
+                <button 
+                  class="ability-badge-btn active" 
+                  onclick="openNatureModal(${i})"
+                  style="width: 100%; justify-content: space-between; display: flex; align-items: center; background: rgba(99, 102, 241, 0.12); border: 1px solid rgba(99, 102, 241, 0.3); padding: 0.45rem 0.65rem;"
+                >
+                  <span style="font-weight: 700; color: #a5b4fc; display: flex; align-items: center; gap: 0.3rem;"><i data-lucide="compass" style="width: 13px; height: 13px;"></i> ${natureInfo.name} <span style="font-weight: normal; opacity: 0.75; font-size: 0.75rem;">(${natureInfo.EnglishName})</span></span>
+                  <span style="font-size: 0.7rem;">
+                    ${natureInfo.plus ? `<span style="color:#4ade80; font-weight: bold;">+${natureInfo.plus.toUpperCase()}</span> / <span style="color:#f87171; font-weight: bold;">-${natureInfo.minus.toUpperCase()}</span>` : '<span style="color: var(--color-text-muted);">Neutra</span>'}
+                  </span>
+                </button>
+              </div>
+            </div>
             
-            <!-- DIAPOSITIVA 2: OBJETOS -->
-            <div class="buildeo-slide" style="width: 33.333%;">
+            <!-- DIAPOSITIVA 3 (4/4): OBJETOS -->
+            <div class="buildeo-slide" style="width: 25%;">
               <div class="buildeo-ability-section">
                 <span class="buildeo-section-label">Objeto Equipado</span>
                 ${isMega ? `
@@ -3114,6 +3342,7 @@ function parseShowdownPaste(pasteText) {
     let speciesName = "";
     let itemName = "";
     let abilityName = "";
+    let natureName = "";
     const moves = [];
     
     const firstLine = lines[0];
@@ -3138,8 +3367,10 @@ function parseShowdownPaste(pasteText) {
     
     for (let i = 1; i < lines.length; i++) {
       const line = lines[i];
-      if (line.toLowerCase().startsWith('ability:')) {
-        abilityName = line.replace(/ability:/i, '').trim();
+      if (line.toLowerCase().startsWith('ability:') || line.toLowerCase().startsWith('habilidad:')) {
+        abilityName = line.replace(/ability:/i, '').replace(/habilidad:/i, '').trim();
+      } else if (line.toLowerCase().includes('nature') || line.toLowerCase().includes('naturaleza')) {
+        natureName = line.replace(/nature/i, '').replace(/naturaleza/i, '').replace(/[:\-]/g, '').trim();
       } else if (line.startsWith('-')) {
         const moveName = line.replace(/^-+\s*/, '').trim();
         if (moveName && moves.length < 4) {
@@ -3153,6 +3384,7 @@ function parseShowdownPaste(pasteText) {
         speciesName,
         itemName,
         abilityName,
+        natureName,
         moves
       });
     }
@@ -3305,10 +3537,13 @@ async function importTeamFromPokepasteUrl() {
         }
       }
       
+      const selectedNature = item.natureName ? findNatureKeyByName(item.natureName) : "hardy";
+      
       activeTeam[index] = {
         ...dbPoke,
         key: key,
         selectedAbility: selectedAbility,
+        selectedNature: selectedNature,
         equippedItem: equippedItem,
         selectedMoves: selectedMoves
       };
@@ -3320,7 +3555,7 @@ async function importTeamFromPokepasteUrl() {
     closeImportModal();
     saveTeamToLocalStorage();
     updateUI();
-    showToast(`¡Se importaron ${importedCount} Pokémon desde Poképaste con sus Objetos y Movimientos! 🚀`, "success");
+    showToast(`¡Se importaron ${importedCount} Pokémon desde Poképaste con sus Objetos, Naturalezas y Movimientos! 🚀`, "success");
   } else {
     showToast("No se pudo procesar la información del equipo", "error");
   }
@@ -3387,10 +3622,13 @@ function importTeamFromText() {
         }
       }
       
+      const selectedNature = item.natureName ? findNatureKeyByName(item.natureName) : "hardy";
+      
       activeTeam[index] = {
         ...dbPoke,
         key: key,
         selectedAbility: selectedAbility,
+        selectedNature: selectedNature,
         equippedItem: equippedItem,
         selectedMoves: selectedMoves
       };
@@ -3535,10 +3773,13 @@ async function loadPresetTeam(teamId) {
           }
         }
         
+        const selectedNature = item.natureName ? findNatureKeyByName(item.natureName) : "hardy";
+        
         activeTeam[index] = {
           ...dbPoke,
           key: key,
           selectedAbility: selectedAbility,
+          selectedNature: selectedNature,
           equippedItem: equippedItem,
           selectedMoves: selectedMoves
         };
@@ -3595,10 +3836,13 @@ async function loadPresetTeam(teamId) {
           }
         }
         
+        const selectedNature = detail.nature ? findNatureKeyByName(detail.nature) : "hardy";
+        
         activeTeam[index] = {
           ...dbPoke,
           key: key,
           selectedAbility: selectedAbility,
+          selectedNature: selectedNature,
           equippedItem: equippedItem,
           selectedMoves: selectedMoves
         };

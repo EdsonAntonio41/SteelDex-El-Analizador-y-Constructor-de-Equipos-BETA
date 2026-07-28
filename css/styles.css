@@ -1246,25 +1246,50 @@ footer p {
 
 /* --- SIMULADOR DE BUILDEO STYLING --- */
 
+.carousel-outer-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  box-sizing: border-box;
+}
+
+.carousel-side-btn {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.98));
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  color: #ffffff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4), 0 0 15px rgba(99, 102, 241, 0.25);
+  z-index: 10;
+}
+
+.carousel-side-btn:hover {
+  background: var(--primary);
+  border-color: #818cf8;
+  color: #ffffff;
+  box-shadow: 0 0 22px rgba(99, 102, 241, 0.8);
+  transform: scale(1.12);
+}
+
 .buildeo-grid {
   display: grid;
-  grid-template-columns: repeat(3, 295px);
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   gap: 1rem;
   margin-bottom: 2rem;
   width: 100%;
-}
-
-@media (max-width: 940px) {
-  .buildeo-grid {
-    grid-template-columns: repeat(2, 295px);
-  }
-}
-
-@media (max-width: 630px) {
-  .buildeo-grid {
-    grid-template-columns: 295px;
-  }
+  box-sizing: border-box;
 }
 
 .buildeo-card {
@@ -1276,6 +1301,10 @@ footer p {
   border: 1px solid var(--border-glass);
   padding: 0.7rem 0.8rem !important;
   border-radius: var(--radius-md) !important;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  min-width: 0;
 }
 
 .buildeo-card-header {
@@ -1284,12 +1313,33 @@ footer p {
   justify-content: space-between;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 0.4rem;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .buildeo-poke-header-left {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.buildeo-poke-info {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.buildeo-poke-info h3 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: 0.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Card Nav controls */
@@ -1347,26 +1397,30 @@ footer p {
   cursor: not-allowed;
 }
 
-/* Slider Track Layout */
+/* Slider Track Layout for 4 Steps (400% track, 25% per slide) */
 .buildeo-slider-viewport {
   width: 100%;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .buildeo-slider-track {
   display: flex;
-  width: 300%;
+  width: 400% !important;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
 }
 
 .buildeo-slide {
-  width: 33.333%;
+  width: 25% !important;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
   box-sizing: border-box;
-  padding: 0.15rem 0.1rem;
+  padding: 0.15rem 0.2rem;
+  min-width: 0;
+  overflow: hidden;
 }
 
 
@@ -2064,9 +2118,18 @@ footer p {
 }
 
 /* Moves Customization Styles */
+.buildeo-moves-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.35rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0.4rem;
+}
+
 .pcr-moves-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.3rem;
   width: 100%;
   margin-top: 0.4rem;
@@ -2077,7 +2140,7 @@ footer p {
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: var(--color-text-muted);
   border-radius: var(--radius-sm);
-  padding: 0.3rem 0.45rem;
+  padding: 0.35rem 0.5rem;
   font-size: 0.75rem;
   font-weight: 500;
   text-align: left;
@@ -2086,10 +2149,17 @@ footer p {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  box-sizing: border-box;
   transition: all 0.2s ease;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.pcr-move-btn span {
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  min-width: 0;
 }
 
 .pcr-move-btn:hover {
@@ -2663,4 +2733,286 @@ footer p {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
+}
+
+/* --- VIBRANT & ULTRA-COLORFUL NATURE MATRIX MODAL STYLING --- */
+.nature-matrix-wrapper {
+  overflow-x: auto;
+  background: radial-gradient(circle at top left, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  padding: 1rem;
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.5), 0 8px 32px rgba(0, 0, 0, 0.4);
+  -webkit-overflow-scrolling: touch;
+}
+
+.nature-matrix-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 680px;
+}
+
+.nature-matrix-header {
+  display: grid;
+  grid-template-columns: 120px repeat(5, 1fr);
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.nature-corner-cell {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  color: #e2e8f0;
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(168, 85, 247, 0.3));
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.25rem;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.2);
+}
+
+.nature-header-col {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.25), rgba(185, 28, 28, 0.35));
+  color: #fca5a5;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 0.55rem 0.25rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  border: 1px solid rgba(248, 113, 113, 0.45);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.25);
+  text-shadow: 0 0 6px rgba(239, 68, 68, 0.4);
+}
+
+.nature-matrix-row {
+  display: grid;
+  grid-template-columns: 120px repeat(5, 1fr);
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.nature-row-label {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(5, 150, 105, 0.35));
+  color: #6ee7b7;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 0.6rem 0.25rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  border: 1px solid rgba(52, 211, 153, 0.45);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
+  text-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
+}
+
+.nature-cell-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  color: #e2e8f0;
+  padding: 0.65rem 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nature-cell-btn:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.35), rgba(168, 85, 247, 0.35));
+  border-color: #a855f7;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(168, 85, 247, 0.4);
+}
+
+.nature-cell-btn.active {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  color: #ffffff !important;
+  border: 2px solid #34d199 !important;
+  font-weight: 800;
+  box-shadow: 0 0 18px rgba(52, 211, 153, 0.8), 0 0 32px rgba(16, 185, 129, 0.5) !important;
+  transform: scale(1.04);
+  z-index: 2;
+}
+
+.nature-cell-btn.active::before {
+  content: '✦';
+  margin-right: 4px;
+  font-size: 0.75rem;
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+}
+
+/* --- COMPREHENSIVE RESPONSIVE DESIGN FOR MOBILE & TABLETS --- */
+
+/* Navigation Header */
+@media (max-width: 900px) {
+  .app-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-tabs {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.25rem;
+  }
+
+  .nav-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    padding: 0.55rem 0.85rem;
+    font-size: 0.82rem;
+    flex-shrink: 0;
+  }
+}
+
+/* Active Team Grid */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem;
+  }
+
+  .pokemon-slot {
+    min-height: 135px;
+    padding: 0.5rem;
+  }
+
+  .poke-sprite {
+    width: 65px;
+    height: 65px;
+  }
+
+  .poke-name {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .team-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Team Controls bar */
+@media (max-width: 640px) {
+  .team-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .team-controls > div {
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .btn-action {
+    flex: 1;
+    justify-content: center;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Buildeo Simulator Cards & Split Screen Adaptations */
+@media (max-width: 1200px) {
+  .buildeo-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.85rem !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .buildeo-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 520px;
+    margin: 0 auto 2rem auto !important;
+  }
+  
+  .buildeo-card {
+    min-height: auto;
+    width: 100%;
+  }
+
+  .analysis-carousel-header .section-title {
+    font-size: 1.2rem !important;
+  }
+}
+
+/* Modal Windows Adaptation */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 0.5rem;
+    align-items: flex-end; /* Slide up feel on mobile */
+  }
+
+  .modal-content {
+    max-height: 90vh !important;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0 !important;
+    padding: 1rem !important;
+  }
+
+  .filter-row {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 0.25rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-badge {
+    flex-shrink: 0;
+  }
+}
+
+/* Touch Targets & Button Sizes */
+@media (max-width: 480px) {
+  .modal-header h2 {
+    font-size: 0.95rem;
+  }
+
+  .btn-close-modal {
+    font-size: 1.4rem;
+  }
+
+  .nature-matrix-wrapper {
+    padding: 0.5rem;
+  }
+
+  .nature-cell-btn {
+    padding: 0.5rem 0.2rem;
+    font-size: 0.76rem;
+  }
+
+  .pcr-move-btn {
+    font-size: 0.72rem;
+    padding: 0.4rem;
+  }
 }
