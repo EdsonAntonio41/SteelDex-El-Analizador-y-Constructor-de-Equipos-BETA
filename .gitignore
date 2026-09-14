@@ -1,0 +1,75 @@
+# ========================================
+# SteelDex — .gitignore
+# ========================================
+
+# ---------- Entornos Virtuales ----------
+venv/
+.venv/
+env/
+.env/
+ENV/
+
+# ---------- Variables de Entorno ----------
+.env
+.env.local
+.env.*.local
+
+# ---------- Editor / IDE ----------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# ---------- SO ----------
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*.directory
+
+# ---------- Node (si se añade en el futuro) ----------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ---------- Logs & Temporales ----------
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# ---------- Caché ----------
+.cache/
+.parcel-cache/
+
+# ---------- Antigravity / Gemini ----------
+.gemini/
+.agents/
+.antigravity/
+.antigravity-ide/

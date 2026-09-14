@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon Team Builder & Champion Analyzer</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Construye tu equipo Pokémon definitivo, analiza debilidades y resistencias en tiempo real, y simula combates estratégicos contra los Campeones de la Liga Pokémon de todas las generaciones.">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Content Security Policy (débil por diseño: app estática con onclick inline) -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://play.pokemonshowdown.com https://raw.githubusercontent.com; connect-src 'self' https://pokepast.es https://api.allorigins.win; object-src 'none'; base-uri 'self'; frame-ancestors 'self'">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1 id="app-title"><i data-lucide="shield-alert"></i> Pokémon Team Builder</h1>
+      <p>Construye tu combinación perfecta y vence a los Campeones de la Liga</p>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <div class="tabs-navigation">
+      <button class="tab-btn active" id="tab-builder" onclick="switchTab('builder')">
+        <i data-lucide="layout-grid"></i> Análisis de Equipo
+      </button>
+      <button class="tab-btn" id="tab-box" onclick="switchTab('box')">
+        <i data-lucide="package"></i> Caja Pokémon
+      </button>
+      <button class="tab-btn" id="tab-buildeo" onclick="switchTab('buildeo')">
+        <i data-lucide="wrench"></i> Entrenamiento
+      </button>
+      <button class="tab-btn" id="tab-estrategias" onclick="switchTab('estrategias')">
+        <i data-lucide="book-open"></i> Estrategias
+      </button>
+    </div>
+
+    <!-- Active Team Section (Visible on all tabs for quick reference) -->
+    <section class="team-container">
+      <div class="section-header-row"
+        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 class="section-title" style="margin-bottom: 0;"><i data-lucide="users"></i> Tu Equipo (Máx. 6)</h2>
+        <span id="team-counter"
+          style="color: var(--color-text-muted); font-size: 0.9rem; font-family: var(--font-display);">0 / 6
+          Pokémon</span>
+      </div>
+
+      <div class="team-grid" id="active-team-grid">
+        <!-- 6 Slots will be rendered here dynamically by JS -->
+      </div>
+
+      <div class="team-controls">
+        <button class="btn-action" id="btn-clear-team" onclick="clearTeam()">
+          <i data-lucide="trash-2"></i> Limpiar Equipo
+        </button>
+        <div style="display: flex; gap: 0.75rem;">
+          <button class="btn-action" id="btn-import-team" onclick="openImportModal()">
+            <i data-lucide="file-input"></i> Importar (Showdown)
+          </button>
+          <button class="btn-action btn-action-primary" id="btn-share-team" onclick="shareTeam()">
+            <i data-lucide="share-2"></i> Compartir
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 1: Team Builder & Coverage -->
+    <main class="app-section active" id="section-builder">
+      <div class="coverage-layout">
+        <!-- Individual Pokemon Coverage Cards -->
+        <section class="analysis-carousel-section">
+          <div class="analysis-carousel-header" style="justify-content: center;">
+            <h2 class="section-title" id="analysis-section-title" style="margin-bottom: 0;">
+              <i data-lucide="swords"></i> Eficaz Contra (Ofensivo)
+            </h2>
+          </div>
+          
+          <div class="carousel-dots" id="analysis-carousel-dots">
+            <span class="dot active" onclick="setAnalysisSlide(0)" title="Eficaz Contra"></span>
+            <span class="dot" onclick="setAnalysisSlide(1)" title="Inmunidades y Resistencias"></span>
+            <span class="dot" onclick="setAnalysisSlide(2)" title="Débil Contra"></span>
+            <span class="dot" onclick="setAnalysisSlide(3)" title="Falta por cubrir"></span>
+          </div>
+
+          <div class="carousel-outer-wrapper">
+            <button class="carousel-side-btn prev-btn" onclick="changeAnalysisSlide(-1)" title="Anterior">
+              <i data-lucide="chevron-left"></i>
+            </button>
+            
+            <div class="individual-coverage-grid" id="individual-coverage-container">
+              <!-- Rendered dynamically by JS -->
+            </div>
+            
+            <button class="carousel-side-btn next-btn" onclick="changeAnalysisSlide(1)" title="Siguiente">
+              <i data-lucide="chevron-right"></i>
+            </button>
+          </div>
+        </section>
+
+
+      </div>
+    </main>
+
+
+
+    <!-- TAB 2: Pokemon Box -->
+    <main class="app-section" id="section-box">
+      <section class="analysis-carousel-section" style="margin-bottom: 1rem;">
+        <div class="analysis-carousel-header" style="justify-content: center;">
+          <h2 class="section-title" style="margin-bottom: 0;">
+            <i data-lucide="package"></i> Caja Pokémon
+          </h2>
+        </div>
+      </section>
+
+      <div id="box-navigation" class="box-navigation">
+        <!-- Contador de la única caja Pokémon -->
+      </div>
+
+      <div class="box-grid" id="pokemon-box-grid">
+        <!-- Rendered dynamically by JS -->
+      </div>
+    </main>
+
+    <!-- TAB 3: Buildeo (Build Simulator) -->
+    <main class="app-section" id="section-buildeo">
+      <section class="analysis-carousel-section" style="margin-bottom: 2rem;">
+        <div class="analysis-carousel-header" style="justify-content: center;">
+          <h2 class="section-title" id="buildeo-section-title" style="margin-bottom: 0;">
+            <i data-lucide="swords"></i> Personalizar Movimientos (Paso 1 / 4)
+          </h2>
+        </div>
+        
+        <div class="carousel-dots" id="buildeo-carousel-dots">
+          <span class="dot active" onclick="setBuildeoTabSlide(0)" title="Movimientos"></span>
+          <span class="dot" onclick="setBuildeoTabSlide(1)" title="Habilidades"></span>
+          <span class="dot" onclick="setBuildeoTabSlide(2)" title="Estadísticas y Naturaleza"></span>
+          <span class="dot" onclick="setBuildeoTabSlide(3)" title="Objetos y Recomendados"></span>
+        </div>
+      </section>
+
+      <div class="carousel-outer-wrapper">
+        <button class="carousel-side-btn prev-btn" onclick="changeBuildeoTabSlide(-1)" title="Anterior">
+          <i data-lucide="chevron-left"></i>
+        </button>
+        
+        <div class="buildeo-grid" id="buildeo-grid-container">
+          <!-- Rendered dynamically by JS -->
+        </div>
+        
+        <button class="carousel-side-btn next-btn" onclick="changeBuildeoTabSlide(1)" title="Siguiente">
+          <i data-lucide="chevron-right"></i>
+        </button>
+      </div>
+    </main>
+
+    <!-- TAB 4: Estrategias (Preset Teams) -->
+    <main class="app-section" id="section-estrategias">
+      <section class="analysis-carousel-section" style="margin-bottom: 1.5rem;">
+        <h2 class="section-title">
+          <i data-lucide="book-open"></i> Equipos VGC & Estrategias Competitivas
+        </h2>
+        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.45;">
+          Selecciona una plantilla de equipos competitivos de la comunidad VGC. Al hacer clic se cargará automáticamente en las ranuras de tu equipo.
+        </p>
+        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem;">
+          <button class="btn-refresh-meta" onclick="refreshMetaNow()">
+            <i data-lucide="refresh-cw" style="width: 14px; height: 14px; display: inline-block;"></i>
+            Actualizar meta
+          </button>
+          <span class="meta-status-badge" id="meta-status-badge">Modo offline</span>
+        </div>
+      </section>
+
+      <div class="search-wrapper" style="margin-bottom: 1.5rem;">
+        <i data-lucide="search"></i>
+        <input type="text" class="search-input" id="presets-page-search-input"
+          placeholder="Buscar por creador, descripción o pokémon..." oninput="filterPresetsPageResults()">
+      </div>
+
+      <div class="presets-page-grid" id="presets-page-container">
+        <!-- Rendered dynamically by JS -->
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 Pokémon Team Builder & Champion Analyzer. Creado para planificar batallas de campeones.</p>
+      <p style="font-size: 0.75rem; opacity: 0.7;">Todos los datos e imágenes son propiedad de Nintendo, Game Freak y
+        The Pokémon Company.</p>
+    </footer>
+  </div>
+
+  <!-- SEARCH POKEMON MODAL -->
+  <div class="modal-overlay" id="search-modal" onclick="closeSearchModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h2><i data-lucide="search"></i> Buscar Pokémon</h2>
+        <button class="btn-close-modal" onclick="closeSearchModal(event)">&times;</button>
+      </div>
+      <div class="modal-body">
+        <!-- Search Input -->
+        <div class="search-wrapper">
+          <i data-lucide="search"></i>
+          <input type="text" class="search-input" id="pokemon-search-input"
+            placeholder="Ingresa nombre de Pokémon (ej. Lucario, Garchomp)..." oninput="filterPokemonResults()">
+        </div>
+
+        <!-- Generation Filter Row -->
+        <div class="filter-row" id="generation-filters">
+          <span class="filter-badge active" data-gen="all" onclick="filterByGen('all')">Todos</span>
+          <span class="filter-badge" data-gen="1" onclick="filterByGen(1)">Gen 1</span>
+          <span class="filter-badge" data-gen="2" onclick="filterByGen(2)">Gen 2</span>
+          <span class="filter-badge" data-gen="3" onclick="filterByGen(3)">Gen 3</span>
+          <span class="filter-badge" data-gen="4" onclick="filterByGen(4)">Gen 4</span>
+          <span class="filter-badge" data-gen="5" onclick="filterByGen(5)">Gen 5</span>
+          <span class="filter-badge" data-gen="6" onclick="filterByGen(6)">Gen 6</span>
+          <span class="filter-badge" data-gen="7" onclick="filterByGen(7)">Gen 7</span>
+          <span class="filter-badge" data-gen="8" onclick="filterByGen(8)">Gen 8</span>
+          <span class="filter-badge" data-gen="9" onclick="filterByGen(9)">Gen 9</span>
+        </div>
+
+        <!-- Type Filter Row -->
+        <div class="filter-row" id="type-filters" style="margin-bottom: 1.5rem;">
+          <!-- JS will render type filter badges here -->
+        </div>
+
+        <!-- Search Results Grid -->
+        <div class="search-results-grid" id="search-results-container">
+          <!-- Rendered dynamically by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SELECT ITEM MODAL -->
+  <div class="modal-overlay" id="item-modal" onclick="closeItemModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()" style="max-width: 850px;">
+      <div class="modal-header">
+        <h2><i data-lucide="package"></i> Equipar Objeto</h2>
+        <button class="btn-close-modal" onclick="closeItemModal(event)">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="search-wrapper" style="margin-bottom: 0.75rem;">
+          <i data-lucide="search"></i>
+          <input type="text" class="search-input" id="item-search-input" placeholder="Buscar objetos..."
+            oninput="filterItemsResults()">
+        </div>
+
+        <!-- Categorías de Objetos al estilo Movimientos/Pokédex -->
+        <div class="filter-row" id="item-category-filters" style="margin-bottom: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+          <span class="filter-badge active" data-category="all" onclick="filterItemsByCategory('all')">Todos</span>
+          <span class="filter-badge" data-category="caracteristicas" onclick="filterItemsByCategory('caracteristicas')">Características</span>
+          <span class="filter-badge" data-category="potencia" onclick="filterItemsByCategory('potencia')">Potencia</span>
+          <span class="filter-badge" data-category="defensa" onclick="filterItemsByCategory('defensa')">Defensa</span>
+          <span class="filter-badge" data-category="curacion" onclick="filterItemsByCategory('curacion')">Curación</span>
+          <span class="filter-badge" data-category="prolungacion" onclick="filterItemsByCategory('prolungacion')">Prol.Efectos</span>
+          <span class="filter-badge" data-category="bayas" onclick="filterItemsByCategory('bayas')">Bayas</span>
+          <span class="filter-badge" data-category="megapiedras" onclick="filterItemsByCategory('megapiedras')">MegaPiedras</span>
+          <span class="filter-badge" data-category="otros" onclick="filterItemsByCategory('otros')">Otros</span>
+        </div>
+
+        <div class="items-selection-grid" id="items-selection-container">
+          <!-- Rendered dynamically by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- SELECT MOVE MODAL -->
+  <div class="modal-overlay" id="moves-modal" onclick="closeMovesModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h2><i data-lucide="swords"></i> Seleccionar Movimiento</h2>
+        <button class="btn-close-modal" onclick="closeMovesModal(event)">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="search-wrapper">
+          <i data-lucide="search"></i>
+          <input type="text" class="search-input" id="move-search-input" placeholder="Buscar movimientos..."
+            oninput="filterMovesResults()">
+        </div>
+        <div class="moves-layout-wrapper">
+          <!-- Left side: 3 Columns Grid -->
+          <div class="moves-columns-container">
+            <!-- Physical Column -->
+            <div class="moves-column physical-column">
+              <div class="moves-column-header">
+                <i data-lucide="swords" class="icon-physical"></i> Físico
+              </div>
+              <div class="moves-column-list" id="physical-moves-list">
+                <!-- Rendered dynamically -->
+              </div>
+            </div>
+            
+            <!-- Special Column -->
+            <div class="moves-column special-column">
+              <div class="moves-column-header">
+                <i data-lucide="zap" class="icon-special"></i> Especial
+              </div>
+              <div class="moves-column-list" id="special-moves-list">
+                <!-- Rendered dynamically -->
+              </div>
+            </div>
+            
+            <!-- Status Column -->
+            <div class="moves-column status-column">
+              <div class="moves-column-header">
+                <i data-lucide="shield" class="icon-status"></i> Estado
+              </div>
+              <div class="moves-column-list" id="status-moves-list">
+                <!-- Rendered dynamically -->
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right side: Info Card -->
+          <div class="move-info-card" id="move-info-card">
+            <div class="move-info-placeholder" id="move-info-placeholder">
+              <i data-lucide="info" style="width: 36px; height: 36px; color: var(--color-text-muted); opacity: 0.5; margin-bottom: 0.5rem;"></i>
+              <p style="font-family: var(--font-display); font-size: 0.9rem; text-align: center; color: var(--color-text-muted);">Pasa el cursor sobre un movimiento para ver sus detalles</p>
+            </div>
+            <div class="move-info-details hidden" id="move-info-details">
+              <h3 id="info-move-name" style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--color-text-main);">---</h3>
+              <div class="move-info-badges" style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap;">
+                <span id="info-move-type" class="type-badge">---</span>
+                <span id="info-move-category" class="category-badge">---</span>
+              </div>
+              <div class="move-info-stats" style="margin-bottom: 0.75rem; padding: 0.5rem; background: rgba(255,255,255,0.03); border-radius: var(--radius-sm); display: flex; gap: 1rem;">
+                <div class="move-info-stat" style="display: flex; gap: 0.25rem;">
+                  <span class="stat-label" style="color: var(--color-text-muted); font-size: 0.85rem;">Poder:</span>
+                  <span id="info-move-power" class="stat-value" style="font-weight: bold; font-size: 0.85rem; color: var(--color-text-highlight);">---</span>
+                </div>
+              </div>
+              <p id="info-move-desc" class="move-info-desc" style="color: var(--color-text-muted); font-size: 0.8rem; line-height: 1.4; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.75rem;">---</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NATURE SELECTION MODAL -->
+  <div class="modal-overlay" id="nature-modal" onclick="closeNatureModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()" style="max-width: 820px; width: 95%;">
+      <div class="modal-header">
+        <h2><i data-lucide="compass"></i> Selecciona una variación de características (Naturaleza)</h2>
+        <button class="btn-close-modal" onclick="closeNatureModal(event)">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 1.25rem;">
+        <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 1rem; text-align: center;">
+          La Naturaleza aumenta una estadística un <strong style="color:#4ade80;">+10% ⇡</strong> y reduce otra un <strong style="color:#f87171;">-10% ⇣</strong>.
+        </p>
+
+        <!-- Nature 5x5 Matrix Grid -->
+        <div class="nature-matrix-wrapper">
+          <div class="nature-matrix-table">
+            <div class="nature-matrix-header">
+              <div class="nature-corner-cell">Efecto</div>
+              <div class="nature-header-col">Ataque ⇣</div>
+              <div class="nature-header-col">Defensa ⇣</div>
+              <div class="nature-header-col">At. Esp. ⇣</div>
+              <div class="nature-header-col">Def. Esp. ⇣</div>
+              <div class="nature-header-col">Velocidad ⇣</div>
+            </div>
+            
+            <div class="nature-matrix-rows" id="nature-matrix-body">
+              <!-- Rendered dynamically by JS -->
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; margin-top: 1.25rem;">
+          <button class="btn-action btn-action-primary" onclick="closeNatureModal()"><i data-lucide="check"></i> Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMPORT TEAM MODAL -->
+  <div class="modal-overlay" id="import-modal" onclick="closeImportModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()" style="max-width: 650px;">
+      <div class="modal-header">
+        <h2><i data-lucide="file-input"></i> Importar Equipo (Formato Showdown / Pokepaste)</h2>
+        <button class="btn-close-modal" onclick="closeImportModal(event)">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 0.75rem; line-height: 1.4;">
+          Ingresa un enlace de Poképaste (ej: <code>https://pokepast.es/c56565d274aa4b37</code>) o pega el texto directamente.
+        </p>
+        <div style="margin-bottom: 1rem; display: flex; gap: 0.5rem;">
+          <input type="text" id="import-pokepaste-url" class="search-input" placeholder="https://pokepast.es/c56565d274aa4b37" style="flex: 1; padding: 0.6rem 0.8rem; border-radius: var(--radius-md);" />
+          <button class="btn-action btn-action-primary" onclick="importTeamFromPokepasteUrl()"><i data-lucide="link"></i> Cargar URL Poképaste</button>
+        </div>
+        <div style="text-align: center; margin: 0.75rem 0; color: var(--color-text-muted); font-size: 0.8rem; font-weight: 500;">— O PEGA EL TEXTO SHOWDOWN DIRECTAMENTE —</div>
+        <textarea id="import-team-textarea" class="search-input" style="width: 100%; height: 180px; font-family: monospace; font-size: 0.85rem; padding: 0.75rem; border-radius: var(--radius-md); resize: vertical; margin-bottom: 1rem;" placeholder="Froslass @ Froslassite&#10;Ability: Cursed Body&#10;Modest Nature&#10;- Blizzard&#10;- Shadow Ball&#10;- Aurora Veil&#10;- Protect&#10;&#10;Lycanroc-Dusk @ Focus Sash&#10;Ability: Tough Claws&#10;- Rock Slide&#10;- Accelerock&#10;- Close Combat&#10;- Protect"></textarea>
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="btn-action" onclick="closeImportModal()">Cancelar</button>
+          <button class="btn-action btn-action-primary" onclick="importTeamFromText()"><i data-lucide="check-circle"></i> Importar Texto</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hover Tooltip for Box (anchored to body so it floats above the grid without affecting layout) -->
+  <div id="box-pokemon-tooltip" class="pokemon-tooltip hidden">
+    <!-- Rendered dynamically by JS -->
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Load JavaScript Files -->
+  <script src="js/pokemon-db.js"></script>
+  <script src="js/moves-db.js"></script>
+  <script src="js/preset-teams.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Initialize Lucide Icons on load (guarded: app.js provides an offline fallback)
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+
+</html>

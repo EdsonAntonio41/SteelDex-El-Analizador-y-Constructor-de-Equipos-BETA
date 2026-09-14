@@ -1,0 +1,56 @@
+name: Update meta teams
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: update-meta-teams
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update-meta:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch sources and generate meta/teams.json
+        run: python scripts/update-meta-teams.py
+
+      - name: Validate generated meta/teams.json
+        run: |
+          python - <<'EOF'
+          import json
+          with open("meta/teams.json", encoding="utf-8") as f:
+              data = json.load(f)
+          teams = data.get("teams")
+          assert isinstance(teams, list) and len(teams) > 0, "teams must be a non-empty array"
+          for t in teams:
+              assert isinstance(t.get("pokemon"), list) and 4 <= len(t["pokemon"]) <= 6, t
+          print(f"Valid meta/teams.json: {len(teams)} teams")
+          EOF
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.name "SteelDex Meta Bot"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add meta/teams.json
+          if git diff --cached --quiet; then
+            echo "No changes detected - skipping commit"
+          else
+            git commit -m "chore(meta): update VGC teams feed"
+            git push
+          fi

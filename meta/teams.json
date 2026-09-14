@@ -1,0 +1,3339 @@
+{
+  "schema": "steeldex-meta-teams",
+  "version": 1,
+  "generatedAt": "2026-09-11T22:01:12Z",
+  "regulation": "REG M",
+  "sources": [
+    "pikalytics/championstournaments",
+    "pokekit/smogon"
+  ],
+  "teams": [
+    {
+      "source": "pikalytics/topteams",
+      "placement": 1,
+      "creator": "DDee",
+      "record": "12-0",
+      "event": "Talon's FIGHT CLUB #101 POKEMON CHAMPIONS REG M-C",
+      "tags": [],
+      "pokemon": [
+        "Floette-Eternal-Mega",
+        "Sneasler",
+        "Incineroar",
+        "Rillaboom",
+        "Gholdengo",
+        "Raichu-Mega-Y"
+      ],
+      "sourceUrl": "https://play.limitlesstcg.com/tournament/6a6a3192937230b102d48538/player/ddee/teamlist",
+      "details": [
+        {
+          "species": "Floette-Eternal-Mega",
+          "item": "Floettite",
+          "ability": "Flower Veil",
+          "nature": "Modest Nature",
+          "moves": [
+            "Moonblast",
+            "Dazzling Gleam",
+            "Calm Mind",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Sneasler",
+          "item": "Grassy Seed",
+          "ability": "Unburden",
+          "nature": "Adamant Nature",
+          "moves": [
+            "Close Combat",
+            "Dire Claw",
+            "Rock Slide",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Incineroar",
+          "item": "Sitrus Berry",
+          "ability": "Intimidate",
+          "nature": "Impish Nature",
+          "moves": [
+            "Flare Blitz",
+            "Throat Chop",
+            "Fake Out",
+            "Parting Shot"
+          ]
+        },
+        {
+          "species": "Rillaboom",
+          "item": "Miracle Seed",
+          "ability": "Grassy Surge",
+          "nature": "Adamant Nature",
+          "moves": [
+            "Wood Hammer",
+            "Grassy Glide",
+            "High Horsepower",
+            "Fake Out"
+          ]
+        },
+        {
+          "species": "Gholdengo",
+          "item": "Life Orb",
+          "ability": "Good as Gold",
+          "nature": "Modest Nature",
+          "moves": [
+            "Make It Rain",
+            "Shadow Ball",
+            "Nasty Plot",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Raichu-Mega-Y",
+          "item": "Raichunite Y",
+          "ability": "Lightning Rod",
+          "nature": "Timid Nature",
+          "moves": [
+            "Zap Cannon",
+            "Focus Blast",
+            "Encore",
+            "Protect"
+          ]
+        }
+      ],
+      "description": "Talon's FIGHT CLUB #101 POKEMON CHAMPIONS REG M-C",
+      "id": "META-0001",
+      "pokepasteText": "Floette-Eternal-Mega @ Floettite\nAbility: Flower Veil\nModest Nature\n- Moonblast\n- Dazzling Gleam\n- Calm Mind\n- Protect\n\nSneasler @ Grassy Seed\nAbility: Unburden\nAdamant Nature\n- Close Combat\n- Dire Claw\n- Rock Slide\n- Protect\n\nIncineroar @ Sitrus Berry\nAbility: Intimidate\nImpish Nature\n- Flare Blitz\n- Throat Chop\n- Fake Out\n- Parting Shot\n\nRillaboom @ Miracle Seed\nAbility: Grassy Surge\nAdamant Nature\n- Wood Hammer\n- Grassy Glide\n- High Horsepower\n- Fake Out\n\nGholdengo @ Life Orb\nAbility: Good as Gold\nModest Nature\n- Make It Rain\n- Shadow Ball\n- Nasty Plot\n- Protect\n\nRaichu-Mega-Y @ Raichunite Y\nAbility: Lightning Rod\nTimid Nature\n- Zap Cannon\n- Focus Blast\n- Encore\n- Protect"
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 2,
+      "creator": "LelloCartello",
+      "record": "10-1",
+      "event": "Tenki's Cart Weekly #117 - Reg M-C",
+      "tags": [
+        "trick-room"
+      ],
+      "pokemon": [
+        "Metagross-Mega",
+        "Indeedee",
+        "Sneasler",
+        "Arcanine-Hisui",
+        "Salamence-Mega",
+        "Milotic"
+      ],
+      "sourceUrl": "https://play.limitlesstcg.com/tournament/6a9c37baa4272c53be647d8a/player/lellocartello/teamlist",
+      "details": [
+        {
+          "species": "Metagross-Mega",
+          "item": "Metagrossite",
+          "ability": "Clear Body",
+          "nature": "Adamant Nature",
+          "moves": [
+            "Iron Head",
+            "Psychic Fangs",
+            "Body Press",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Indeedee",
+          "item": "Choice Scarf",
+          "ability": "Psychic Surge",
+          "nature": "Timid Nature",
+          "moves": [
+            "Expanding Force",
+            "Imprison",
+            "Trick",
+            "Trick Room"
+          ]
+        },
+        {
+          "species": "Sneasler",
+          "item": "Psychic Seed",
+          "ability": "Unburden",
+          "nature": "Jolly Nature",
+          "moves": [
+            "Close Combat",
+            "Dire Claw",
+            "Rock Slide",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Arcanine-Hisui",
+          "item": "Focus Sash",
+          "ability": "Rock Head",
+          "nature": "Jolly Nature",
+          "moves": [
+            "Flare Blitz",
+            "Head Smash",
+            "Rock Slide",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Salamence-Mega",
+          "item": "Salamencite",
+          "ability": "Intimidate",
+          "nature": "Modest Nature",
+          "moves": [
+            "Hyper Voice",
+            "Dragon Pulse",
+            "Heat Wave",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Milotic",
+          "item": "Leftovers",
+          "ability": "Competitive",
+          "nature": "Bold Nature",
+          "moves": [
+            "Scald",
+            "Icy Wind",
+            "Recover",
+            "Protect"
+          ]
+        }
+      ],
+      "description": "Tenki's Cart Weekly #117 - Reg M-C",
+      "id": "META-0002",
+      "pokepasteText": "Metagross-Mega @ Metagrossite\nAbility: Clear Body\nAdamant Nature\n- Iron Head\n- Psychic Fangs\n- Body Press\n- Protect\n\nIndeedee @ Choice Scarf\nAbility: Psychic Surge\nTimid Nature\n- Expanding Force\n- Imprison\n- Trick\n- Trick Room\n\nSneasler @ Psychic Seed\nAbility: Unburden\nJolly Nature\n- Close Combat\n- Dire Claw\n- Rock Slide\n- Protect\n\nArcanine-Hisui @ Focus Sash\nAbility: Rock Head\nJolly Nature\n- Flare Blitz\n- Head Smash\n- Rock Slide\n- Protect\n\nSalamence-Mega @ Salamencite\nAbility: Intimidate\nModest Nature\n- Hyper Voice\n- Dragon Pulse\n- Heat Wave\n- Protect\n\nMilotic @ Leftovers\nAbility: Competitive\nBold Nature\n- Scald\n- Icy Wind\n- Recover\n- Protect"
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 3,
+      "creator": "M_rada",
+      "record": "7-0",
+      "event": "Alpensee Tour (Reg M-C, Swiss only) #74",
+      "tags": [],
+      "pokemon": [
+        "Gengar-Mega",
+        "Snorlax",
+        "Incineroar",
+        "Scrafty",
+        "Dragonite",
+        "Rillaboom"
+      ],
+      "sourceUrl": "https://play.limitlesstcg.com/tournament/6a7f315b5a30714095570103/player/m_rada/teamlist",
+      "details": [
+        {
+          "species": "Gengar-Mega",
+          "item": "Gengarite",
+          "ability": "Cursed Body",
+          "nature": "Modest Nature",
+          "moves": [
+            "Perish Song",
+            "Shadow Ball",
+            "Sludge Bomb",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Snorlax",
+          "item": "Leftovers",
+          "ability": "Thick Fat",
+          "nature": "Relaxed Nature",
+          "moves": [
+            "Yawn",
+            "Encore",
+            "Fissure",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Incineroar",
+          "item": "Sitrus Berry",
+          "ability": "Intimidate",
+          "nature": "Relaxed Nature",
+          "moves": [
+            "Flare Blitz",
+            "Parting Shot",
+            "Fake Out",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Scrafty",
+          "item": "Focus Sash",
+          "ability": "Intimidate",
+          "nature": "Impish Nature",
+          "moves": [
+            "Close Combat",
+            "Knock Off",
+            "Fake Out",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Dragonite",
+          "item": "Life Orb",
+          "ability": "Inner Focus",
+          "nature": "Adamant Nature",
+          "moves": [
+            "Dragon Claw",
+            "Low Kick",
+            "Extreme Speed",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Rillaboom",
+          "item": "Eject Button",
+          "ability": "Grassy Surge",
+          "nature": "Sassy Nature",
+          "moves": [
+            "Grassy Glide",
+            "U-turn",
+            "Fake Out",
+            "Protect"
+          ]
+        }
+      ],
+      "description": "Alpensee Tour (Reg M-C, Swiss only) #74",
+      "id": "META-0003",
+      "pokepasteText": "Gengar-Mega @ Gengarite\nAbility: Cursed Body\nModest Nature\n- Perish Song\n- Shadow Ball\n- Sludge Bomb\n- Protect\n\nSnorlax @ Leftovers\nAbility: Thick Fat\nRelaxed Nature\n- Yawn\n- Encore\n- Fissure\n- Protect\n\nIncineroar @ Sitrus Berry\nAbility: Intimidate\nRelaxed Nature\n- Flare Blitz\n- Parting Shot\n- Fake Out\n- Protect\n\nScrafty @ Focus Sash\nAbility: Intimidate\nImpish Nature\n- Close Combat\n- Knock Off\n- Fake Out\n- Protect\n\nDragonite @ Life Orb\nAbility: Inner Focus\nAdamant Nature\n- Dragon Claw\n- Low Kick\n- Extreme Speed\n- Protect\n\nRillaboom @ Eject Button\nAbility: Grassy Surge\nSassy Nature\n- Grassy Glide\n- U-turn\n- Fake Out\n- Protect"
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 4,
+      "creator": "LittlePotato13",
+      "record": "5-0",
+      "event": "Pokepal Smackdown #157 (Champions) (Reg M-C)",
+      "tags": [
+        "trick-room"
+      ],
+      "pokemon": [
+        "Froslass-Mega",
+        "Arcanine-Hisui",
+        "Kingambit",
+        "Farigiraf",
+        "Floette-Eternal-Mega",
+        "Toxapex"
+      ],
+      "sourceUrl": "https://play.limitlesstcg.com/tournament/6a96ef24629039f77d8a7614/player/littlepotato13/teamlist",
+      "details": [
+        {
+          "species": "Froslass-Mega",
+          "item": "Froslassite",
+          "ability": "Cursed Body",
+          "nature": "Timid Nature",
+          "moves": [
+            "Protect",
+            "Aurora Veil",
+            "Shadow Ball",
+            "Blizzard"
+          ]
+        },
+        {
+          "species": "Arcanine-Hisui",
+          "item": "Focus Sash",
+          "ability": "Rock Head",
+          "nature": "Jolly Nature",
+          "moves": [
+            "Protect",
+            "Extreme Speed",
+            "Flare Blitz",
+            "Head Smash"
+          ]
+        },
+        {
+          "species": "Kingambit",
+          "item": "Chople Berry",
+          "ability": "Defiant",
+          "nature": "Adamant Nature",
+          "moves": [
+            "Sucker Punch",
+            "Kowtow Cleave",
+            "Low Kick",
+            "Iron Head"
+          ]
+        },
+        {
+          "species": "Farigiraf",
+          "item": "Sitrus Berry",
+          "ability": "Armor Tail",
+          "nature": "Bold Nature",
+          "moves": [
+            "Protect",
+            "Trick Room",
+            "Helping Hand",
+            "Psychic"
+          ]
+        },
+        {
+          "species": "Floette-Eternal-Mega",
+          "item": "Floettite",
+          "ability": "Flower Veil",
+          "nature": "Modest Nature",
+          "moves": [
+            "Protect",
+            "Dazzling Gleam",
+            "Moonblast",
+            "Light of Ruin"
+          ]
+        },
+        {
+          "species": "Toxapex",
+          "item": "Leftovers",
+          "ability": "Regenerator",
+          "nature": "Relaxed Nature",
+          "moves": [
+            "Baneful Bunker",
+            "Wide Guard",
+            "Toxic",
+            "Infestation"
+          ]
+        }
+      ],
+      "description": "Pokepal Smackdown #157 (Champions) (Reg M-C)",
+      "id": "META-0004",
+      "pokepasteText": "Froslass-Mega @ Froslassite\nAbility: Cursed Body\nTimid Nature\n- Protect\n- Aurora Veil\n- Shadow Ball\n- Blizzard\n\nArcanine-Hisui @ Focus Sash\nAbility: Rock Head\nJolly Nature\n- Protect\n- Extreme Speed\n- Flare Blitz\n- Head Smash\n\nKingambit @ Chople Berry\nAbility: Defiant\nAdamant Nature\n- Sucker Punch\n- Kowtow Cleave\n- Low Kick\n- Iron Head\n\nFarigiraf @ Sitrus Berry\nAbility: Armor Tail\nBold Nature\n- Protect\n- Trick Room\n- Helping Hand\n- Psychic\n\nFloette-Eternal-Mega @ Floettite\nAbility: Flower Veil\nModest Nature\n- Protect\n- Dazzling Gleam\n- Moonblast\n- Light of Ruin\n\nToxapex @ Leftovers\nAbility: Regenerator\nRelaxed Nature\n- Baneful Bunker\n- Wide Guard\n- Toxic\n- Infestation"
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 5,
+      "creator": "Hazarai",
+      "record": "4-0",
+      "event": "Wolfey Patreon Tournament - M-C Launch Casual Tour",
+      "tags": [
+        "sun",
+        "trick-room"
+      ],
+      "pokemon": [
+        "Blastoise-Mega",
+        "Golisopod-Mega",
+        "Torkoal",
+        "Farigiraf",
+        "Basculegion",
+        "Sylveon"
+      ],
+      "sourceUrl": "https://play.limitlesstcg.com/tournament/6a9df29eab080c8c957fc4e2/player/hazarai/teamlist",
+      "details": [
+        {
+          "species": "Blastoise-Mega",
+          "item": "Blastoisinite",
+          "ability": "Rain Dish",
+          "nature": "Quiet Nature",
+          "moves": [
+            "Water Spout",
+            "Aura Sphere",
+            "Dark Pulse",
+            "Fake Out"
+          ]
+        },
+        {
+          "species": "Golisopod-Mega",
+          "item": "Golisopite",
+          "ability": "Emergency Exit",
+          "nature": "Adamant Nature",
+          "moves": [
+            "Leech Life",
+            "Swords Dance",
+            "Iron Head",
+            "Close Combat"
+          ]
+        },
+        {
+          "species": "Torkoal",
+          "item": "Charcoal",
+          "ability": "Drought",
+          "nature": "Modest Nature",
+          "moves": [
+            "Eruption",
+            "Weather Ball",
+            "Solar Beam",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Farigiraf",
+          "item": "Sitrus Berry",
+          "ability": "Armor Tail",
+          "nature": "Bold Nature",
+          "moves": [
+            "Twin Beam",
+            "Helping Hand",
+            "Thunderbolt",
+            "Trick Room"
+          ]
+        },
+        {
+          "species": "Basculegion",
+          "item": "Life Orb",
+          "ability": "Adaptability",
+          "nature": "Adamant Nature",
+          "moves": [
+            "Wave Crash",
+            "Last Respects",
+            "Protect",
+            "Aqua Jet"
+          ]
+        },
+        {
+          "species": "Sylveon",
+          "item": "Fairy Feather",
+          "ability": "Pixilate",
+          "nature": "Modest Nature",
+          "moves": [
+            "Hyper Voice",
+            "Quick Attack",
+            "Hyper Beam",
+            "Detect"
+          ]
+        }
+      ],
+      "description": "Wolfey Patreon Tournament - M-C Launch Casual Tour",
+      "id": "META-0005",
+      "pokepasteText": "Blastoise-Mega @ Blastoisinite\nAbility: Rain Dish\nQuiet Nature\n- Water Spout\n- Aura Sphere\n- Dark Pulse\n- Fake Out\n\nGolisopod-Mega @ Golisopite\nAbility: Emergency Exit\nAdamant Nature\n- Leech Life\n- Swords Dance\n- Iron Head\n- Close Combat\n\nTorkoal @ Charcoal\nAbility: Drought\nModest Nature\n- Eruption\n- Weather Ball\n- Solar Beam\n- Protect\n\nFarigiraf @ Sitrus Berry\nAbility: Armor Tail\nBold Nature\n- Twin Beam\n- Helping Hand\n- Thunderbolt\n- Trick Room\n\nBasculegion @ Life Orb\nAbility: Adaptability\nAdamant Nature\n- Wave Crash\n- Last Respects\n- Protect\n- Aqua Jet\n\nSylveon @ Fairy Feather\nAbility: Pixilate\nModest Nature\n- Hyper Voice\n- Quick Attack\n- Hyper Beam\n- Detect"
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 6,
+      "creator": "Tyler Reis",
+      "record": "5-0",
+      "event": "3º Torneio Remoto Pokémon Champions - Liga CWB",
+      "tags": [
+        "snow"
+      ],
+      "pokemon": [
+        "Froslass-Mega",
+        "Sneasler",
+        "Kingambit",
+        "Lycanroc",
+        "Scovillain-Mega",
+        "Basculegion"
+      ],
+      "sourceUrl": "https://play.limitlesstcg.com/tournament/6aa00e5bab080c8c957fdf71/player/nevermore23/teamlist",
+      "details": [
+        {
+          "species": "Froslass-Mega",
+          "item": "Froslassite",
+          "ability": "Snow Warning",
+          "nature": "Timid Nature",
+          "moves": [
+            "Blizzard",
+            "Aurora Veil",
+            "Shadow Ball",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Sneasler",
+          "item": "White Herb",
+          "ability": "Unburden",
+          "nature": "Adamant Nature",
+          "moves": [
+            "Fake Out",
+            "Close Combat",
+            "Dire Claw",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Kingambit",
+          "item": "Black Glasses",
+          "ability": "Defiant",
+          "nature": "Adamant Nature",
+          "moves": [
+            "Kowtow Cleave",
+            "Sucker Punch",
+            "Swords Dance",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Lycanroc",
+          "item": "Focus Sash",
+          "ability": "Tough Claws",
+          "nature": "Adamant Nature",
+          "moves": [
+            "Rock Slide",
+            "Accelerock",
+            "Close Combat",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Scovillain-Mega",
+          "item": "Scovillainite",
+          "ability": "Spicy Spray",
+          "nature": "Bold Nature",
+          "moves": [
+            "Giga Drain",
+            "Overheat",
+            "Rage Powder",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Basculegion",
+          "item": "Life Orb",
+          "ability": "Adaptability",
+          "nature": "Adamant Nature",
+          "moves": [
+            "Wave Crash",
+            "Last Respects",
+            "Aqua Jet",
+            "Protect"
+          ]
+        }
+      ],
+      "description": "3º Torneio Remoto Pokémon Champions - Liga CWB",
+      "id": "META-0006",
+      "pokepasteText": "Froslass-Mega @ Froslassite\nAbility: Snow Warning\nTimid Nature\n- Blizzard\n- Aurora Veil\n- Shadow Ball\n- Protect\n\nSneasler @ White Herb\nAbility: Unburden\nAdamant Nature\n- Fake Out\n- Close Combat\n- Dire Claw\n- Protect\n\nKingambit @ Black Glasses\nAbility: Defiant\nAdamant Nature\n- Kowtow Cleave\n- Sucker Punch\n- Swords Dance\n- Protect\n\nLycanroc @ Focus Sash\nAbility: Tough Claws\nAdamant Nature\n- Rock Slide\n- Accelerock\n- Close Combat\n- Protect\n\nScovillain-Mega @ Scovillainite\nAbility: Spicy Spray\nBold Nature\n- Giga Drain\n- Overheat\n- Rage Powder\n- Protect\n\nBasculegion @ Life Orb\nAbility: Adaptability\nAdamant Nature\n- Wave Crash\n- Last Respects\n- Aqua Jet\n- Protect"
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 7,
+      "creator": "Suruga",
+      "record": "7-0",
+      "event": "Off Meta Fight Club #2 ($40 USD prize pool)",
+      "tags": [
+        "rain",
+        "trick-room",
+        "tailwind"
+      ],
+      "pokemon": [
+        "Grimmsnarl",
+        "Archaludon",
+        "Swampert-Mega",
+        "Golisopod-Mega",
+        "Pelipper",
+        "Farigiraf"
+      ],
+      "sourceUrl": "https://play.limitlesstcg.com/tournament/6a9a185bab080c8c957f9408/player/suruga/teamlist",
+      "details": [
+        {
+          "species": "Grimmsnarl",
+          "item": "Light Clay",
+          "ability": "Prankster",
+          "nature": "Careful Nature",
+          "moves": [
+            "Parting Shot",
+            "Light Screen",
+            "Reflect",
+            "Spirit Break"
+          ]
+        },
+        {
+          "species": "Archaludon",
+          "item": "Leftovers",
+          "ability": "Stamina",
+          "nature": "Modest Nature",
+          "moves": [
+            "Electro Shot",
+            "Snarl",
+            "Dragon Pulse",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Swampert-Mega",
+          "item": "Swampertite",
+          "ability": "Torrent",
+          "nature": "Jolly Nature",
+          "moves": [
+            "Wave Crash",
+            "Ice Punch",
+            "Earthquake",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Golisopod-Mega",
+          "item": "Golisopite",
+          "ability": "Emergency Exit",
+          "nature": "Brave Nature",
+          "moves": [
+            "Leech Life",
+            "Iron Head",
+            "Swords Dance",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Pelipper",
+          "item": "Focus Sash",
+          "ability": "Drizzle",
+          "nature": "Modest Nature",
+          "moves": [
+            "Weather Ball",
+            "Hurricane",
+            "Wide Guard",
+            "Tailwind"
+          ]
+        },
+        {
+          "species": "Farigiraf",
+          "item": "Sitrus Berry",
+          "ability": "Armor Tail",
+          "nature": "Modest Nature",
+          "moves": [
+            "Trick Room",
+            "Psychic",
+            "Thunderbolt",
+            "Protect"
+          ]
+        }
+      ],
+      "description": "Off Meta Fight Club #2 ($40 USD prize pool)",
+      "id": "META-0007",
+      "pokepasteText": "Grimmsnarl @ Light Clay\nAbility: Prankster\nCareful Nature\n- Parting Shot\n- Light Screen\n- Reflect\n- Spirit Break\n\nArchaludon @ Leftovers\nAbility: Stamina\nModest Nature\n- Electro Shot\n- Snarl\n- Dragon Pulse\n- Protect\n\nSwampert-Mega @ Swampertite\nAbility: Torrent\nJolly Nature\n- Wave Crash\n- Ice Punch\n- Earthquake\n- Protect\n\nGolisopod-Mega @ Golisopite\nAbility: Emergency Exit\nBrave Nature\n- Leech Life\n- Iron Head\n- Swords Dance\n- Protect\n\nPelipper @ Focus Sash\nAbility: Drizzle\nModest Nature\n- Weather Ball\n- Hurricane\n- Wide Guard\n- Tailwind\n\nFarigiraf @ Sitrus Berry\nAbility: Armor Tail\nModest Nature\n- Trick Room\n- Psychic\n- Thunderbolt\n- Protect"
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 8,
+      "creator": "DoubleBad17",
+      "record": "8-2",
+      "event": "Intimidators Champions Challenge #42 REG M-C",
+      "tags": [
+        "tailwind"
+      ],
+      "pokemon": [
+        "Rillaboom",
+        "Incineroar",
+        "Salamence-Mega",
+        "Volcarona",
+        "Kingambit",
+        "Floette-Eternal-Mega"
+      ],
+      "sourceUrl": "https://play.limitlesstcg.com/tournament/6aa0086fab080c8c957fdf49/player/doublebad17/teamlist",
+      "details": [
+        {
+          "species": "Rillaboom",
+          "item": "Miracle Seed",
+          "ability": "Grassy Surge",
+          "nature": "Adamant Nature",
+          "moves": [
+            "Grassy Glide",
+            "Fake Out",
+            "Wood Hammer",
+            "High Horsepower"
+          ]
+        },
+        {
+          "species": "Incineroar",
+          "item": "Sitrus Berry",
+          "ability": "Intimidate",
+          "nature": "Careful Nature",
+          "moves": [
+            "Fake Out",
+            "Throat Chop",
+            "Flare Blitz",
+            "Parting Shot"
+          ]
+        },
+        {
+          "species": "Salamence-Mega",
+          "item": "Salamencite",
+          "ability": "Intimidate",
+          "nature": "Naive Nature",
+          "moves": [
+            "Hyper Voice",
+            "Double-Edge",
+            "Tailwind",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Volcarona",
+          "item": "Grassy Seed",
+          "ability": "Flame Body",
+          "nature": "Timid Nature",
+          "moves": [
+            "Quiver Dance",
+            "Heat Wave",
+            "Giga Drain",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Kingambit",
+          "item": "Life Orb",
+          "ability": "Defiant",
+          "nature": "Adamant Nature",
+          "moves": [
+            "Kowtow Cleave",
+            "Sucker Punch",
+            "Low Kick",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Floette-Eternal-Mega",
+          "item": "Floettite",
+          "ability": "Flower Veil",
+          "nature": "Bold Nature",
+          "moves": [
+            "Dazzling Gleam",
+            "Draining Kiss",
+            "Calm Mind",
+            "Protect"
+          ]
+        }
+      ],
+      "description": "Intimidators Champions Challenge #42 REG M-C",
+      "id": "META-0008",
+      "pokepasteText": "Rillaboom @ Miracle Seed\nAbility: Grassy Surge\nAdamant Nature\n- Grassy Glide\n- Fake Out\n- Wood Hammer\n- High Horsepower\n\nIncineroar @ Sitrus Berry\nAbility: Intimidate\nCareful Nature\n- Fake Out\n- Throat Chop\n- Flare Blitz\n- Parting Shot\n\nSalamence-Mega @ Salamencite\nAbility: Intimidate\nNaive Nature\n- Hyper Voice\n- Double-Edge\n- Tailwind\n- Protect\n\nVolcarona @ Grassy Seed\nAbility: Flame Body\nTimid Nature\n- Quiver Dance\n- Heat Wave\n- Giga Drain\n- Protect\n\nKingambit @ Life Orb\nAbility: Defiant\nAdamant Nature\n- Kowtow Cleave\n- Sucker Punch\n- Low Kick\n- Protect\n\nFloette-Eternal-Mega @ Floettite\nAbility: Flower Veil\nBold Nature\n- Dazzling Gleam\n- Draining Kiss\n- Calm Mind\n- Protect"
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 9,
+      "creator": "138mysx",
+      "record": "11-2",
+      "event": "🍋Sitrus-Series🍋 · Champions-MC · $50 to First · #75",
+      "tags": [
+        "sun",
+        "tailwind"
+      ],
+      "pokemon": [
+        "Rillaboom",
+        "Charizard-Mega-Y",
+        "Kingambit",
+        "Sylveon",
+        "Salamence-Mega",
+        "Sneasler"
+      ],
+      "sourceUrl": "https://play.limitlesstcg.com/tournament/6a93805b629039f77d8a53c1/player/138mysx/teamlist",
+      "details": [
+        {
+          "species": "Rillaboom",
+          "item": "Sitrus Berry",
+          "ability": "Grassy Surge",
+          "nature": "Adamant Nature",
+          "moves": [
+            "Fake Out",
+            "Wood Hammer",
+            "Grassy Glide",
+            "U-turn"
+          ]
+        },
+        {
+          "species": "Charizard-Mega-Y",
+          "item": "Charizardite Y",
+          "ability": "Blaze",
+          "nature": "Modest Nature",
+          "moves": [
+            "Heat Wave",
+            "Weather Ball",
+            "Ancient Power",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Kingambit",
+          "item": "Life Orb",
+          "ability": "Defiant",
+          "nature": "Adamant Nature",
+          "moves": [
+            "Kowtow Cleave",
+            "Iron Head",
+            "Sucker Punch",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Sylveon",
+          "item": "Fairy Feather",
+          "ability": "Pixilate",
+          "nature": "Modest Nature",
+          "moves": [
+            "Hyper Beam",
+            "Hyper Voice",
+            "Quick Attack",
+            "Detect"
+          ]
+        },
+        {
+          "species": "Salamence-Mega",
+          "item": "Salamencite",
+          "ability": "Intimidate",
+          "nature": "Hasty Nature",
+          "moves": [
+            "Hyper Voice",
+            "Tailwind",
+            "Double-Edge",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Sneasler",
+          "item": "Grassy Seed",
+          "ability": "Unburden",
+          "nature": "Adamant Nature",
+          "moves": [
+            "Fake Out",
+            "Close Combat",
+            "Dire Claw",
+            "Protect"
+          ]
+        }
+      ],
+      "description": "🍋Sitrus-Series🍋 · Champions-MC · $50 to First · #75",
+      "id": "META-0009",
+      "pokepasteText": "Rillaboom @ Sitrus Berry\nAbility: Grassy Surge\nAdamant Nature\n- Fake Out\n- Wood Hammer\n- Grassy Glide\n- U-turn\n\nCharizard-Mega-Y @ Charizardite Y\nAbility: Blaze\nModest Nature\n- Heat Wave\n- Weather Ball\n- Ancient Power\n- Protect\n\nKingambit @ Life Orb\nAbility: Defiant\nAdamant Nature\n- Kowtow Cleave\n- Iron Head\n- Sucker Punch\n- Protect\n\nSylveon @ Fairy Feather\nAbility: Pixilate\nModest Nature\n- Hyper Beam\n- Hyper Voice\n- Quick Attack\n- Detect\n\nSalamence-Mega @ Salamencite\nAbility: Intimidate\nHasty Nature\n- Hyper Voice\n- Tailwind\n- Double-Edge\n- Protect\n\nSneasler @ Grassy Seed\nAbility: Unburden\nAdamant Nature\n- Fake Out\n- Close Combat\n- Dire Claw\n- Protect"
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 10,
+      "creator": "Fluffy_m1n",
+      "record": "4-0",
+      "event": "BPL MC KICKOFF TOURNAMENT",
+      "tags": [],
+      "pokemon": [
+        "Rillaboom",
+        "Sneasler",
+        "Kingambit",
+        "Delphox-Mega",
+        "Floette-Eternal-Mega",
+        "Incineroar"
+      ],
+      "sourceUrl": "https://play.limitlesstcg.com/tournament/6aa18dd9ab080c8c957ff1c6/player/fluffy_m1n/teamlist",
+      "details": [
+        {
+          "species": "Rillaboom",
+          "item": "Miracle Seed",
+          "ability": "Grassy Surge",
+          "nature": "Adamant Nature",
+          "moves": [
+            "Wood Hammer",
+            "Grassy Glide",
+            "Fake Out",
+            "Drain Punch"
+          ]
+        },
+        {
+          "species": "Sneasler",
+          "item": "Focus Sash",
+          "ability": "Poison Touch",
+          "nature": "Jolly Nature",
+          "moves": [
+            "Poison Jab",
+            "Close Combat",
+            "Fake Out",
+            "Quick Guard"
+          ]
+        },
+        {
+          "species": "Kingambit",
+          "item": "Life Orb",
+          "ability": "Defiant",
+          "nature": "Adamant Nature",
+          "moves": [
+            "Kowtow Cleave",
+            "Sucker Punch",
+            "Swords Dance",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Delphox-Mega",
+          "item": "Delphoxite",
+          "ability": "Blaze",
+          "nature": "Timid Nature",
+          "moves": [
+            "Heat Wave",
+            "Psyshock",
+            "Nasty Plot",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Floette-Eternal-Mega",
+          "item": "Floettite",
+          "ability": "Flower Veil",
+          "nature": "Modest Nature",
+          "moves": [
+            "Dazzling Gleam",
+            "Draining Kiss",
+            "Calm Mind",
+            "Protect"
+          ]
+        },
+        {
+          "species": "Incineroar",
+          "item": "Passho Berry",
+          "ability": "Intimidate",
+          "nature": "Careful Nature",
+          "moves": [
+            "Parting Shot",
+            "Fake Out",
+            "Throat Chop",
+            "Flare Blitz"
+          ]
+        }
+      ],
+      "description": "BPL MC KICKOFF TOURNAMENT",
+      "id": "META-0010",
+      "pokepasteText": "Rillaboom @ Miracle Seed\nAbility: Grassy Surge\nAdamant Nature\n- Wood Hammer\n- Grassy Glide\n- Fake Out\n- Drain Punch\n\nSneasler @ Focus Sash\nAbility: Poison Touch\nJolly Nature\n- Poison Jab\n- Close Combat\n- Fake Out\n- Quick Guard\n\nKingambit @ Life Orb\nAbility: Defiant\nAdamant Nature\n- Kowtow Cleave\n- Sucker Punch\n- Swords Dance\n- Protect\n\nDelphox-Mega @ Delphoxite\nAbility: Blaze\nTimid Nature\n- Heat Wave\n- Psyshock\n- Nasty Plot\n- Protect\n\nFloette-Eternal-Mega @ Floettite\nAbility: Flower Veil\nModest Nature\n- Dazzling Gleam\n- Draining Kiss\n- Calm Mind\n- Protect\n\nIncineroar @ Passho Berry\nAbility: Intimidate\nCareful Nature\n- Parting Shot\n- Fake Out\n- Throat Chop\n- Flare Blitz"
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 11,
+      "creator": "CptAuroOG",
+      "record": "6-1",
+      "event": "London Corviknights VGC Weekly Tour 12! (Reg M-C)",
+      "tags": [
+        "tailwind"
+      ],
+      "pokemon": [
+        "Floette-Eternal-Mega",
+        "Raichu-Mega-Y",
+        "Gholdengo",
+        "Rillaboom",
+        "Arcanine-Hisui",
+        "Salamence"
+      ],
+      "sourceUrl": null,
+      "description": "London Corviknights VGC Weekly Tour 12! (Reg M-C)",
+      "id": "META-0011",
+      "details": []
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 12,
+      "creator": "Nbryu",
+      "record": "8-0",
+      "event": "[Reg M-C Bo3] THURSDAY NIGHT THROWDOWN #3",
+      "tags": [
+        "tailwind"
+      ],
+      "pokemon": [
+        "Salamence-Mega",
+        "Froslass-Mega",
+        "Rillaboom",
+        "Sneasler",
+        "Gholdengo",
+        "Arcanine-Hisui"
+      ],
+      "sourceUrl": null,
+      "description": "[Reg M-C Bo3] THURSDAY NIGHT THROWDOWN #3",
+      "id": "META-0012",
+      "details": []
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 13,
+      "creator": "Roid Blancaflor",
+      "record": "7-2",
+      "event": "Mid-Week Smoke #10",
+      "tags": [
+        "trick-room",
+        "tailwind"
+      ],
+      "pokemon": [
+        "Basculegion",
+        "Farigiraf",
+        "Blaziken",
+        "Whimsicott",
+        "Floette-Eternal-Mega",
+        "Salamence-Mega"
+      ],
+      "sourceUrl": null,
+      "description": "Mid-Week Smoke #10",
+      "id": "META-0013",
+      "details": []
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 14,
+      "creator": "PokeReplay",
+      "record": "7-0",
+      "event": "SNT Reg M-C Tour #1",
+      "tags": [
+        "sun",
+        "trick-room"
+      ],
+      "pokemon": [
+        "Charizard-Mega-Y",
+        "Rillaboom",
+        "Incineroar",
+        "Toxapex",
+        "Sylveon",
+        "Farigiraf"
+      ],
+      "sourceUrl": null,
+      "description": "SNT Reg M-C Tour #1",
+      "id": "META-0014",
+      "details": []
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 15,
+      "creator": "Contrapple",
+      "record": "10-2",
+      "event": "Talon's FIGHT CLUB #101 POKEMON CHAMPIONS REG M-C",
+      "tags": [
+        "rain",
+        "tailwind"
+      ],
+      "pokemon": [
+        "Baxcalibur-Mega",
+        "Archaludon",
+        "Pelipper",
+        "Basculegion",
+        "Rillaboom",
+        "Sneasler"
+      ],
+      "sourceUrl": null,
+      "description": "Talon's FIGHT CLUB #101 POKEMON CHAMPIONS REG M-C",
+      "id": "META-0015",
+      "details": []
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 16,
+      "creator": "Robin_VGC",
+      "record": "9-1",
+      "event": "Reg M-C Qualifier for RookideeVGC Grand Tourney",
+      "tags": [
+        "trick-room"
+      ],
+      "pokemon": [
+        "Salamence-Mega",
+        "Floette-Eternal-Mega",
+        "Sneasler",
+        "Kingambit",
+        "Incineroar",
+        "Sinistcha"
+      ],
+      "sourceUrl": null,
+      "description": "Reg M-C Qualifier for RookideeVGC Grand Tourney",
+      "id": "META-0016",
+      "details": []
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 17,
+      "creator": "SableyeVGC",
+      "record": "10-2",
+      "event": "r/VGC Regulation M-C Kickoff Cup",
+      "tags": [
+        "tailwind"
+      ],
+      "pokemon": [
+        "Salamence-Mega",
+        "Rillaboom",
+        "Sneasler",
+        "Arcanine-Hisui",
+        "Kingambit",
+        "Basculegion"
+      ],
+      "sourceUrl": null,
+      "description": "r/VGC Regulation M-C Kickoff Cup",
+      "id": "META-0017",
+      "details": [],
+      "sourceRefs": [
+        {
+          "source": "pikalytics/topteams",
+          "sourceUrl": null,
+          "event": "Tenki's Cart Weekly #117 - Reg M-C",
+          "placement": 18,
+          "record": "9-1"
+        }
+      ]
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 19,
+      "creator": "MaxTrickRoom",
+      "record": "6-1",
+      "event": "London Corviknights VGC Weekly Tour 12! (Reg M-C)",
+      "tags": [
+        "sun",
+        "trick-room"
+      ],
+      "pokemon": [
+        "Indeedee",
+        "Glimmora-Mega",
+        "Sneasler",
+        "Ninetales-Alola",
+        "Charizard-Mega-Y",
+        "Garchomp"
+      ],
+      "sourceUrl": null,
+      "description": "London Corviknights VGC Weekly Tour 12! (Reg M-C)",
+      "id": "META-0019",
+      "details": []
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 20,
+      "creator": "dartsvgc",
+      "record": "1-0",
+      "event": "CHAMPIONS REG. M-C · 👑CROWN FIGHT Bo3 TOUR #85👑",
+      "tags": [
+        "sun",
+        "trick-room",
+        "tailwind"
+      ],
+      "pokemon": [
+        "Indeedee-F",
+        "Gardevoir-Mega",
+        "Armarouge",
+        "Annihilape",
+        "Torkoal",
+        "Aerodactyl-Mega"
+      ],
+      "sourceUrl": null,
+      "description": "CHAMPIONS REG. M-C · 👑CROWN FIGHT Bo3 TOUR #85👑",
+      "id": "META-0020",
+      "details": []
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 21,
+      "creator": "Dess ㅤ",
+      "record": "8-1",
+      "event": "Intimidators Champions Challenge #42 REG M-C",
+      "tags": [
+        "tailwind"
+      ],
+      "pokemon": [
+        "Lucario-Mega-Z",
+        "Salamence-Mega",
+        "Rillaboom",
+        "Basculegion",
+        "Gholdengo",
+        "Arcanine-Hisui"
+      ],
+      "sourceUrl": null,
+      "description": "Intimidators Champions Challenge #42 REG M-C",
+      "id": "META-0021",
+      "details": []
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 22,
+      "creator": "Naovi",
+      "record": "4-0",
+      "event": "⛩️Chadweezy95 VGC Champions Tournament Ep 11!⛩️",
+      "tags": [
+        "tailwind"
+      ],
+      "pokemon": [
+        "Froslass-Mega",
+        "Kingambit",
+        "Sneasler",
+        "Hydreigon",
+        "Whimsicott",
+        "Volcarona"
+      ],
+      "sourceUrl": null,
+      "description": "⛩️Chadweezy95 VGC Champions Tournament Ep 11!⛩️",
+      "id": "META-0022",
+      "details": []
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 23,
+      "creator": "The_Andrw",
+      "record": "4-0",
+      "event": "Finisterrae Series VGC #3",
+      "tags": [
+        "sand",
+        "tailwind"
+      ],
+      "pokemon": [
+        "Salamence-Mega",
+        "Excadrill",
+        "Tyranitar-Mega",
+        "Rillaboom",
+        "Milotic",
+        "Gholdengo"
+      ],
+      "sourceUrl": null,
+      "description": "Finisterrae Series VGC #3",
+      "id": "META-0023",
+      "details": []
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 24,
+      "creator": "MichaelderBeste",
+      "record": "6-1",
+      "event": "Alpensee Tour (Reg M-C, Swiss only) #74",
+      "tags": [
+        "tailwind"
+      ],
+      "pokemon": [
+        "Salamence-Mega",
+        "Sneasler",
+        "Gholdengo",
+        "Tsareena",
+        "Raichu-Mega-Y",
+        "Sylveon"
+      ],
+      "sourceUrl": null,
+      "description": "Alpensee Tour (Reg M-C, Swiss only) #74",
+      "id": "META-0024",
+      "details": []
+    },
+    {
+      "source": "pikalytics/topteams",
+      "placement": 25,
+      "creator": "Shaboogles",
+      "record": "4-0",
+      "event": "Wolfey Patreon Tournament - M-C Launch Casual Tour",
+      "tags": [
+        "sun"
+      ],
+      "pokemon": [
+        "Garchomp",
+        "Toxapex",
+        "Charizard-Mega-Y",
+        "Floette-Eternal-Mega",
+        "Rillaboom",
+        "Incineroar"
+      ],
+      "sourceUrl": null,
+      "description": "Wolfey Patreon Tournament - M-C Launch Casual Tour",
+      "id": "META-0025",
+      "details": []
+    }
+  ],
+  "metaStats": {
+    "source": "pokekit/smogon",
+    "top": [
+      {
+        "pokemon": "Kingambit",
+        "usage": 36.8,
+        "moves": [
+          {
+            "name": "suckerpunch",
+            "usage": 99.8
+          },
+          {
+            "name": "kowtowcleave",
+            "usage": 98.3
+          },
+          {
+            "name": "ironhead",
+            "usage": 67.8
+          },
+          {
+            "name": "protect",
+            "usage": 67.6
+          },
+          {
+            "name": "lowkick",
+            "usage": 39.3
+          },
+          {
+            "name": "swordsdance",
+            "usage": 25.7
+          },
+          {
+            "name": "brickbreak",
+            "usage": 0.7
+          },
+          {
+            "name": "quickguard",
+            "usage": 0.2
+          }
+        ],
+        "items": [
+          {
+            "name": "blackglasses",
+            "usage": 40.2
+          },
+          {
+            "name": "chopleberry",
+            "usage": 25.5
+          },
+          {
+            "name": "focussash",
+            "usage": 17.1
+          },
+          {
+            "name": "lifeorb",
+            "usage": 12.5
+          },
+          {
+            "name": "occaberry",
+            "usage": 2.8
+          },
+          {
+            "name": "expertbelt",
+            "usage": 0.8
+          }
+        ],
+        "abilities": [
+          {
+            "name": "defiant",
+            "usage": 99.2
+          },
+          {
+            "name": "supremeoverlord",
+            "usage": 0.8
+          },
+          {
+            "name": "pressure",
+            "usage": null
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "garchomp",
+            "usage": 42.2
+          },
+          {
+            "name": "basculegion",
+            "usage": 38.2
+          },
+          {
+            "name": "charizardmegay",
+            "usage": 36.7
+          },
+          {
+            "name": "whimsicott",
+            "usage": 27.3
+          },
+          {
+            "name": "sneasler",
+            "usage": 26.5
+          },
+          {
+            "name": "incineroar",
+            "usage": 24.2
+          },
+          {
+            "name": "sylveon",
+            "usage": 23.0
+          },
+          {
+            "name": "floettemega",
+            "usage": 22.0
+          }
+        ]
+      },
+      {
+        "pokemon": "Incineroar",
+        "usage": 33.9,
+        "moves": [
+          {
+            "name": "fakeout",
+            "usage": 99.8
+          },
+          {
+            "name": "partingshot",
+            "usage": 94.1
+          },
+          {
+            "name": "flareblitz",
+            "usage": 91.2
+          },
+          {
+            "name": "throatchop",
+            "usage": 44.4
+          },
+          {
+            "name": "darkestlariat",
+            "usage": 36.1
+          },
+          {
+            "name": "protect",
+            "usage": 13.1
+          },
+          {
+            "name": "helpinghand",
+            "usage": 9.5
+          },
+          {
+            "name": "closecombat",
+            "usage": 5.6
+          }
+        ],
+        "items": [
+          {
+            "name": "sitrusberry",
+            "usage": 60.7
+          },
+          {
+            "name": "passhoberry",
+            "usage": 16.1
+          },
+          {
+            "name": "chopleberry",
+            "usage": 7.1
+          },
+          {
+            "name": "charcoal",
+            "usage": 4.8
+          },
+          {
+            "name": "lifeorb",
+            "usage": 3.4
+          },
+          {
+            "name": "whiteherb",
+            "usage": 2.6
+          }
+        ],
+        "abilities": [
+          {
+            "name": "intimidate",
+            "usage": 99.6
+          },
+          {
+            "name": "blaze",
+            "usage": 0.4
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "sinistcha",
+            "usage": 37.3
+          },
+          {
+            "name": "garchomp",
+            "usage": 28.5
+          },
+          {
+            "name": "kingambit",
+            "usage": 26.4
+          },
+          {
+            "name": "sneasler",
+            "usage": 26.3
+          },
+          {
+            "name": "charizardmegay",
+            "usage": 25.9
+          },
+          {
+            "name": "floettemega",
+            "usage": 16.3
+          },
+          {
+            "name": "delphoxmega",
+            "usage": 16.2
+          },
+          {
+            "name": "farigiraf",
+            "usage": 15.8
+          }
+        ]
+      },
+      {
+        "pokemon": "Garchomp",
+        "usage": 33.2,
+        "moves": [
+          {
+            "name": "dragonclaw",
+            "usage": 91.6
+          },
+          {
+            "name": "earthquake",
+            "usage": 85.7
+          },
+          {
+            "name": "protect",
+            "usage": 77.8
+          },
+          {
+            "name": "rockslide",
+            "usage": 75.9
+          },
+          {
+            "name": "stompingtantrum",
+            "usage": 45.6
+          },
+          {
+            "name": "rocktomb",
+            "usage": 7.2
+          },
+          {
+            "name": "poisonjab",
+            "usage": 6.3
+          },
+          {
+            "name": "dragontail",
+            "usage": 3.6
+          }
+        ],
+        "items": [
+          {
+            "name": "lifeorb",
+            "usage": 61.2
+          },
+          {
+            "name": "choicescarf",
+            "usage": 15.6
+          },
+          {
+            "name": "sitrusberry",
+            "usage": 12.3
+          },
+          {
+            "name": "roseliberry",
+            "usage": 4.8
+          },
+          {
+            "name": "lumberry",
+            "usage": 1.4
+          },
+          {
+            "name": "expertbelt",
+            "usage": 0.9
+          }
+        ],
+        "abilities": [
+          {
+            "name": "roughskin",
+            "usage": 97.7
+          },
+          {
+            "name": "sandveil",
+            "usage": 2.3
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "charizardmegay",
+            "usage": 62.5
+          },
+          {
+            "name": "kingambit",
+            "usage": 46.9
+          },
+          {
+            "name": "whimsicott",
+            "usage": 38.8
+          },
+          {
+            "name": "basculegion",
+            "usage": 34.3
+          },
+          {
+            "name": "incineroar",
+            "usage": 29.1
+          },
+          {
+            "name": "sylveon",
+            "usage": 28.3
+          },
+          {
+            "name": "floettemega",
+            "usage": 22.4
+          },
+          {
+            "name": "farigiraf",
+            "usage": 18.8
+          }
+        ]
+      },
+      {
+        "pokemon": "Charizard-Mega-Y",
+        "usage": 30.6,
+        "moves": [
+          {
+            "name": "protect",
+            "usage": 99.7
+          },
+          {
+            "name": "heatwave",
+            "usage": 99.2
+          },
+          {
+            "name": "weatherball",
+            "usage": 92.6
+          },
+          {
+            "name": "solarbeam",
+            "usage": 82.2
+          },
+          {
+            "name": "helpinghand",
+            "usage": 9.9
+          },
+          {
+            "name": "ancientpower",
+            "usage": 6.4
+          },
+          {
+            "name": "overheat",
+            "usage": 4.2
+          },
+          {
+            "name": "hurricane",
+            "usage": 2.3
+          }
+        ],
+        "items": [
+          {
+            "name": "charizarditey",
+            "usage": 100.0
+          }
+        ],
+        "abilities": [
+          {
+            "name": "drought",
+            "usage": 100.0
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "garchomp",
+            "usage": 67.9
+          },
+          {
+            "name": "kingambit",
+            "usage": 44.4
+          },
+          {
+            "name": "basculegion",
+            "usage": 41.6
+          },
+          {
+            "name": "whimsicott",
+            "usage": 39.4
+          },
+          {
+            "name": "sylveon",
+            "usage": 30.8
+          },
+          {
+            "name": "incineroar",
+            "usage": 28.6
+          },
+          {
+            "name": "floettemega",
+            "usage": 21.8
+          },
+          {
+            "name": "farigiraf",
+            "usage": 21.5
+          }
+        ]
+      },
+      {
+        "pokemon": "Basculegion",
+        "usage": 30.2,
+        "moves": [
+          {
+            "name": "lastrespects",
+            "usage": 99.9
+          },
+          {
+            "name": "aquajet",
+            "usage": 96.6
+          },
+          {
+            "name": "wavecrash",
+            "usage": 88.0
+          },
+          {
+            "name": "protect",
+            "usage": 60.0
+          },
+          {
+            "name": "flipturn",
+            "usage": 37.6
+          },
+          {
+            "name": "liquidation",
+            "usage": 11.9
+          },
+          {
+            "name": "substitute",
+            "usage": 1.6
+          },
+          {
+            "name": "psychicfangs",
+            "usage": 1.1
+          }
+        ],
+        "items": [
+          {
+            "name": "choicescarf",
+            "usage": 37.3
+          },
+          {
+            "name": "mysticwater",
+            "usage": 26.2
+          },
+          {
+            "name": "lifeorb",
+            "usage": 14.1
+          },
+          {
+            "name": "focussash",
+            "usage": 12.3
+          },
+          {
+            "name": "sitrusberry",
+            "usage": 8.9
+          },
+          {
+            "name": "colburberry",
+            "usage": 0.5
+          }
+        ],
+        "abilities": [
+          {
+            "name": "adaptability",
+            "usage": 93.3
+          },
+          {
+            "name": "swiftswim",
+            "usage": 6.7
+          },
+          {
+            "name": "moldbreaker",
+            "usage": null
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "kingambit",
+            "usage": 46.7
+          },
+          {
+            "name": "charizardmegay",
+            "usage": 42.1
+          },
+          {
+            "name": "whimsicott",
+            "usage": 39.0
+          },
+          {
+            "name": "garchomp",
+            "usage": 37.7
+          },
+          {
+            "name": "floettemega",
+            "usage": 25.5
+          },
+          {
+            "name": "sneasler",
+            "usage": 17.0
+          },
+          {
+            "name": "pelipper",
+            "usage": 17.0
+          },
+          {
+            "name": "archaludon",
+            "usage": 16.1
+          }
+        ]
+      },
+      {
+        "pokemon": "Sinistcha",
+        "usage": 26.1,
+        "moves": [
+          {
+            "name": "matchagotcha",
+            "usage": 97.9
+          },
+          {
+            "name": "ragepowder",
+            "usage": 97.7
+          },
+          {
+            "name": "protect",
+            "usage": 71.5
+          },
+          {
+            "name": "trickroom",
+            "usage": 64.6
+          },
+          {
+            "name": "lifedew",
+            "usage": 38.0
+          },
+          {
+            "name": "shadowball",
+            "usage": 15.8
+          },
+          {
+            "name": "strengthsap",
+            "usage": 5.7
+          },
+          {
+            "name": "imprison",
+            "usage": 3.6
+          }
+        ],
+        "items": [
+          {
+            "name": "kasibberry",
+            "usage": 29.9
+          },
+          {
+            "name": "sitrusberry",
+            "usage": 19.8
+          },
+          {
+            "name": "colburberry",
+            "usage": 19.0
+          },
+          {
+            "name": "occaberry",
+            "usage": 10.5
+          },
+          {
+            "name": "cobaberry",
+            "usage": 9.1
+          },
+          {
+            "name": "leftovers",
+            "usage": 5.8
+          }
+        ],
+        "abilities": [
+          {
+            "name": "hospitality",
+            "usage": 99.6
+          },
+          {
+            "name": "heatproof",
+            "usage": 0.4
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "incineroar",
+            "usage": 48.3
+          },
+          {
+            "name": "sneasler",
+            "usage": 32.6
+          },
+          {
+            "name": "kingambit",
+            "usage": 28.3
+          },
+          {
+            "name": "delphoxmega",
+            "usage": 22.5
+          },
+          {
+            "name": "blastoisemega",
+            "usage": 21.0
+          },
+          {
+            "name": "floettemega",
+            "usage": 17.1
+          },
+          {
+            "name": "pelipper",
+            "usage": 15.5
+          },
+          {
+            "name": "archaludon",
+            "usage": 15.5
+          }
+        ]
+      },
+      {
+        "pokemon": "Whimsicott",
+        "usage": 22.5,
+        "moves": [
+          {
+            "name": "tailwind",
+            "usage": 98.9
+          },
+          {
+            "name": "moonblast",
+            "usage": 93.9
+          },
+          {
+            "name": "encore",
+            "usage": 79.0
+          },
+          {
+            "name": "protect",
+            "usage": 71.2
+          },
+          {
+            "name": "charm",
+            "usage": 14.1
+          },
+          {
+            "name": "sunnyday",
+            "usage": 8.1
+          },
+          {
+            "name": "faketears",
+            "usage": 5.6
+          },
+          {
+            "name": "lightscreen",
+            "usage": 4.2
+          }
+        ],
+        "items": [
+          {
+            "name": "focussash",
+            "usage": 73.7
+          },
+          {
+            "name": "fairyfeather",
+            "usage": 7.9
+          },
+          {
+            "name": "mentalherb",
+            "usage": 7.6
+          },
+          {
+            "name": "occaberry",
+            "usage": 3.3
+          },
+          {
+            "name": "lifeorb",
+            "usage": 3.1
+          },
+          {
+            "name": "cobaberry",
+            "usage": 2.0
+          }
+        ],
+        "abilities": [
+          {
+            "name": "prankster",
+            "usage": 99.8
+          },
+          {
+            "name": "chlorophyll",
+            "usage": 0.2
+          },
+          {
+            "name": "infiltrator",
+            "usage": null
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "garchomp",
+            "usage": 57.1
+          },
+          {
+            "name": "charizardmegay",
+            "usage": 53.4
+          },
+          {
+            "name": "basculegion",
+            "usage": 52.2
+          },
+          {
+            "name": "kingambit",
+            "usage": 44.6
+          },
+          {
+            "name": "floettemega",
+            "usage": 32.7
+          },
+          {
+            "name": "staraptormega",
+            "usage": 19.3
+          },
+          {
+            "name": "incineroar",
+            "usage": 15.1
+          },
+          {
+            "name": "sneasler",
+            "usage": 12.5
+          }
+        ]
+      },
+      {
+        "pokemon": "Sneasler",
+        "usage": 20.9,
+        "moves": [
+          {
+            "name": "closecombat",
+            "usage": 99.7
+          },
+          {
+            "name": "fakeout",
+            "usage": 92.3
+          },
+          {
+            "name": "direclaw",
+            "usage": 63.0
+          },
+          {
+            "name": "protect",
+            "usage": 50.1
+          },
+          {
+            "name": "quickguard",
+            "usage": 30.4
+          },
+          {
+            "name": "poisonjab",
+            "usage": 29.9
+          },
+          {
+            "name": "coaching",
+            "usage": 12.0
+          },
+          {
+            "name": "gunkshot",
+            "usage": 6.6
+          }
+        ],
+        "items": [
+          {
+            "name": "focussash",
+            "usage": 49.8
+          },
+          {
+            "name": "whiteherb",
+            "usage": 44.7
+          },
+          {
+            "name": "ironball",
+            "usage": 2.7
+          },
+          {
+            "name": "lifeorb",
+            "usage": 1.4
+          },
+          {
+            "name": "expertbelt",
+            "usage": 0.4
+          },
+          {
+            "name": "mentalherb",
+            "usage": 0.3
+          }
+        ],
+        "abilities": [
+          {
+            "name": "unburden",
+            "usage": 56.5
+          },
+          {
+            "name": "poisontouch",
+            "usage": 42.8
+          },
+          {
+            "name": "pressure",
+            "usage": 0.7
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "kingambit",
+            "usage": 46.7
+          },
+          {
+            "name": "incineroar",
+            "usage": 42.4
+          },
+          {
+            "name": "sinistcha",
+            "usage": 40.6
+          },
+          {
+            "name": "delphoxmega",
+            "usage": 27.2
+          },
+          {
+            "name": "blastoisemega",
+            "usage": 25.0
+          },
+          {
+            "name": "basculegion",
+            "usage": 24.5
+          },
+          {
+            "name": "floettemega",
+            "usage": 18.1
+          },
+          {
+            "name": "whimsicott",
+            "usage": 13.4
+          }
+        ]
+      },
+      {
+        "pokemon": "Farigiraf",
+        "usage": 20.2,
+        "moves": [
+          {
+            "name": "trickroom",
+            "usage": 98.3
+          },
+          {
+            "name": "thunderbolt",
+            "usage": 59.2
+          },
+          {
+            "name": "psychic",
+            "usage": 54.4
+          },
+          {
+            "name": "helpinghand",
+            "usage": 52.9
+          },
+          {
+            "name": "protect",
+            "usage": 38.7
+          },
+          {
+            "name": "twinbeam",
+            "usage": 23.0
+          },
+          {
+            "name": "hypervoice",
+            "usage": 17.8
+          },
+          {
+            "name": "roar",
+            "usage": 10.1
+          }
+        ],
+        "items": [
+          {
+            "name": "sitrusberry",
+            "usage": 73.1
+          },
+          {
+            "name": "colburberry",
+            "usage": 18.1
+          },
+          {
+            "name": "mentalherb",
+            "usage": 2.2
+          },
+          {
+            "name": "lifeorb",
+            "usage": 1.5
+          },
+          {
+            "name": "leftovers",
+            "usage": 1.3
+          },
+          {
+            "name": "expertbelt",
+            "usage": 0.9
+          }
+        ],
+        "abilities": [
+          {
+            "name": "armortail",
+            "usage": 99.1
+          },
+          {
+            "name": "cudchew",
+            "usage": 0.6
+          },
+          {
+            "name": "sapsipper",
+            "usage": 0.3
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "sylveon",
+            "usage": 38.5
+          },
+          {
+            "name": "kingambit",
+            "usage": 34.3
+          },
+          {
+            "name": "charizardmegay",
+            "usage": 32.1
+          },
+          {
+            "name": "garchomp",
+            "usage": 30.6
+          },
+          {
+            "name": "incineroar",
+            "usage": 26.1
+          },
+          {
+            "name": "torkoal",
+            "usage": 21.2
+          },
+          {
+            "name": "aerodactylmega",
+            "usage": 20.9
+          },
+          {
+            "name": "mawilemega",
+            "usage": 16.9
+          }
+        ]
+      },
+      {
+        "pokemon": "Sylveon",
+        "usage": 17.5,
+        "moves": [
+          {
+            "name": "hypervoice",
+            "usage": 99.9
+          },
+          {
+            "name": "quickattack",
+            "usage": 88.3
+          },
+          {
+            "name": "hyperbeam",
+            "usage": 68.1
+          },
+          {
+            "name": "detect",
+            "usage": 63.8
+          },
+          {
+            "name": "protect",
+            "usage": 35.1
+          },
+          {
+            "name": "yawn",
+            "usage": 20.5
+          },
+          {
+            "name": "moonblast",
+            "usage": 10.5
+          },
+          {
+            "name": "calmmind",
+            "usage": 5.3
+          }
+        ],
+        "items": [
+          {
+            "name": "fairyfeather",
+            "usage": 92.0
+          },
+          {
+            "name": "lifeorb",
+            "usage": 5.6
+          },
+          {
+            "name": "focussash",
+            "usage": 1.0
+          },
+          {
+            "name": "leftovers",
+            "usage": 0.7
+          },
+          {
+            "name": "sitrusberry",
+            "usage": 0.3
+          },
+          {
+            "name": "choicescarf",
+            "usage": 0.2
+          }
+        ],
+        "abilities": [
+          {
+            "name": "pixilate",
+            "usage": 99.9
+          },
+          {
+            "name": "cutecharm",
+            "usage": 0.1
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "charizardmegay",
+            "usage": 53.7
+          },
+          {
+            "name": "garchomp",
+            "usage": 53.6
+          },
+          {
+            "name": "kingambit",
+            "usage": 48.5
+          },
+          {
+            "name": "farigiraf",
+            "usage": 44.9
+          },
+          {
+            "name": "aerodactylmega",
+            "usage": 38.2
+          },
+          {
+            "name": "incineroar",
+            "usage": 27.8
+          },
+          {
+            "name": "basculegion",
+            "usage": 19.4
+          },
+          {
+            "name": "whimsicott",
+            "usage": 10.6
+          }
+        ]
+      },
+      {
+        "pokemon": "Floette-Mega",
+        "usage": 15.0,
+        "moves": [
+          {
+            "name": "protect",
+            "usage": 99.8
+          },
+          {
+            "name": "dazzlinggleam",
+            "usage": 95.9
+          },
+          {
+            "name": "moonblast",
+            "usage": 75.5
+          },
+          {
+            "name": "lightofruin",
+            "usage": 57.3
+          },
+          {
+            "name": "calmmind",
+            "usage": 41.9
+          },
+          {
+            "name": "drainingkiss",
+            "usage": 24.1
+          },
+          {
+            "name": "psychic",
+            "usage": 3.3
+          },
+          {
+            "name": "grassknot",
+            "usage": 0.4
+          }
+        ],
+        "items": [
+          {
+            "name": "floettite",
+            "usage": 100.0
+          }
+        ],
+        "abilities": [
+          {
+            "name": "fairyaura",
+            "usage": 100.0
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "kingambit",
+            "usage": 54.5
+          },
+          {
+            "name": "basculegion",
+            "usage": 51.6
+          },
+          {
+            "name": "garchomp",
+            "usage": 49.8
+          },
+          {
+            "name": "whimsicott",
+            "usage": 49.3
+          },
+          {
+            "name": "charizardmegay",
+            "usage": 44.8
+          },
+          {
+            "name": "incineroar",
+            "usage": 37.0
+          },
+          {
+            "name": "sinistcha",
+            "usage": 29.9
+          },
+          {
+            "name": "sneasler",
+            "usage": 25.4
+          }
+        ]
+      },
+      {
+        "pokemon": "Archaludon",
+        "usage": 14.3,
+        "moves": [
+          {
+            "name": "electroshot",
+            "usage": 98.6
+          },
+          {
+            "name": "protect",
+            "usage": 96.2
+          },
+          {
+            "name": "flashcannon",
+            "usage": 94.9
+          },
+          {
+            "name": "dragonpulse",
+            "usage": 82.8
+          },
+          {
+            "name": "dracometeor",
+            "usage": 13.6
+          },
+          {
+            "name": "aurasphere",
+            "usage": 9.0
+          },
+          {
+            "name": "snarl",
+            "usage": 1.6
+          },
+          {
+            "name": "thunderbolt",
+            "usage": 0.9
+          }
+        ],
+        "items": [
+          {
+            "name": "leftovers",
+            "usage": 88.7
+          },
+          {
+            "name": "wiseglasses",
+            "usage": 2.6
+          },
+          {
+            "name": "chopleberry",
+            "usage": 2.2
+          },
+          {
+            "name": "sitrusberry",
+            "usage": 1.9
+          },
+          {
+            "name": "choicescarf",
+            "usage": 1.1
+          },
+          {
+            "name": "dragonfang",
+            "usage": 0.6
+          }
+        ],
+        "abilities": [
+          {
+            "name": "stamina",
+            "usage": 94.6
+          },
+          {
+            "name": "sturdy",
+            "usage": 4.5
+          },
+          {
+            "name": "stalwart",
+            "usage": 0.9
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "pelipper",
+            "usage": 71.4
+          },
+          {
+            "name": "swampertmega",
+            "usage": 49.6
+          },
+          {
+            "name": "grimmsnarl",
+            "usage": 39.0
+          },
+          {
+            "name": "basculegion",
+            "usage": 34.3
+          },
+          {
+            "name": "sinistcha",
+            "usage": 28.5
+          },
+          {
+            "name": "charizardmegay",
+            "usage": 19.3
+          },
+          {
+            "name": "incineroar",
+            "usage": 19.2
+          },
+          {
+            "name": "politoed",
+            "usage": 17.4
+          }
+        ]
+      },
+      {
+        "pokemon": "Pelipper",
+        "usage": 12.9,
+        "moves": [
+          {
+            "name": "hurricane",
+            "usage": 98.1
+          },
+          {
+            "name": "weatherball",
+            "usage": 93.3
+          },
+          {
+            "name": "tailwind",
+            "usage": 88.5
+          },
+          {
+            "name": "wideguard",
+            "usage": 64.2
+          },
+          {
+            "name": "protect",
+            "usage": 34.8
+          },
+          {
+            "name": "raindance",
+            "usage": 4.8
+          },
+          {
+            "name": "muddywater",
+            "usage": 3.2
+          },
+          {
+            "name": "uturn",
+            "usage": 3.0
+          }
+        ],
+        "items": [
+          {
+            "name": "sitrusberry",
+            "usage": 45.1
+          },
+          {
+            "name": "focussash",
+            "usage": 35.6
+          },
+          {
+            "name": "lifeorb",
+            "usage": 7.0
+          },
+          {
+            "name": "damprock",
+            "usage": 6.9
+          },
+          {
+            "name": "choicescarf",
+            "usage": 1.8
+          },
+          {
+            "name": "leftovers",
+            "usage": 0.7
+          }
+        ],
+        "abilities": [
+          {
+            "name": "drizzle",
+            "usage": 99.8
+          },
+          {
+            "name": "keeneye",
+            "usage": 0.2
+          },
+          {
+            "name": "raindish",
+            "usage": 0.1
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "archaludon",
+            "usage": 78.9
+          },
+          {
+            "name": "swampertmega",
+            "usage": 47.9
+          },
+          {
+            "name": "grimmsnarl",
+            "usage": 42.3
+          },
+          {
+            "name": "basculegion",
+            "usage": 40.0
+          },
+          {
+            "name": "sinistcha",
+            "usage": 31.6
+          },
+          {
+            "name": "charizardmegay",
+            "usage": 18.2
+          },
+          {
+            "name": "venusaurmega",
+            "usage": 14.9
+          },
+          {
+            "name": "metagrossmega",
+            "usage": 14.6
+          }
+        ]
+      },
+      {
+        "pokemon": "Staraptor-Mega",
+        "usage": 11.3,
+        "moves": [
+          {
+            "name": "closecombat",
+            "usage": 100.0
+          },
+          {
+            "name": "protect",
+            "usage": 97.0
+          },
+          {
+            "name": "bravebird",
+            "usage": 83.4
+          },
+          {
+            "name": "roost",
+            "usage": 59.9
+          },
+          {
+            "name": "tailwind",
+            "usage": 38.3
+          },
+          {
+            "name": "dualwingbeat",
+            "usage": 16.4
+          },
+          {
+            "name": "finalgambit",
+            "usage": 1.3
+          },
+          {
+            "name": "blazekick",
+            "usage": 0.9
+          }
+        ],
+        "items": [
+          {
+            "name": "staraptite",
+            "usage": 100.0
+          }
+        ],
+        "abilities": [
+          {
+            "name": "contrary",
+            "usage": 100.0
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "whimsicott",
+            "usage": 38.3
+          },
+          {
+            "name": "gholdengo",
+            "usage": 37.4
+          },
+          {
+            "name": "sinistcha",
+            "usage": 33.7
+          },
+          {
+            "name": "garchomp",
+            "usage": 33.4
+          },
+          {
+            "name": "excadrill",
+            "usage": 23.3
+          },
+          {
+            "name": "milotic",
+            "usage": 20.7
+          },
+          {
+            "name": "kingambit",
+            "usage": 20.6
+          },
+          {
+            "name": "tyranitarmega",
+            "usage": 19.9
+          }
+        ]
+      },
+      {
+        "pokemon": "Grimmsnarl",
+        "usage": 10.4,
+        "moves": [
+          {
+            "name": "partingshot",
+            "usage": 94.2
+          },
+          {
+            "name": "reflect",
+            "usage": 88.9
+          },
+          {
+            "name": "lightscreen",
+            "usage": 84.7
+          },
+          {
+            "name": "spiritbreak",
+            "usage": 59.3
+          },
+          {
+            "name": "foulplay",
+            "usage": 27.4
+          },
+          {
+            "name": "fakeout",
+            "usage": 23.1
+          },
+          {
+            "name": "suckerpunch",
+            "usage": 5.9
+          },
+          {
+            "name": "scaryface",
+            "usage": 5.4
+          }
+        ],
+        "items": [
+          {
+            "name": "lightclay",
+            "usage": 82.8
+          },
+          {
+            "name": "roseliberry",
+            "usage": 10.8
+          },
+          {
+            "name": "blackglasses",
+            "usage": 2.7
+          },
+          {
+            "name": "sitrusberry",
+            "usage": 0.8
+          },
+          {
+            "name": "babiriberry",
+            "usage": 0.6
+          },
+          {
+            "name": "brightpowder",
+            "usage": 0.5
+          }
+        ],
+        "abilities": [
+          {
+            "name": "prankster",
+            "usage": 99.4
+          },
+          {
+            "name": "frisk",
+            "usage": 0.4
+          },
+          {
+            "name": "pickpocket",
+            "usage": 0.2
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "archaludon",
+            "usage": 54.1
+          },
+          {
+            "name": "pelipper",
+            "usage": 53.0
+          },
+          {
+            "name": "sinistcha",
+            "usage": 33.2
+          },
+          {
+            "name": "basculegion",
+            "usage": 29.8
+          },
+          {
+            "name": "swampertmega",
+            "usage": 29.3
+          },
+          {
+            "name": "charizardmegay",
+            "usage": 27.5
+          },
+          {
+            "name": "metagrossmega",
+            "usage": 19.8
+          },
+          {
+            "name": "venusaur",
+            "usage": 16.6
+          }
+        ]
+      },
+      {
+        "pokemon": "Aerodactyl-Mega",
+        "usage": 9.9,
+        "moves": [
+          {
+            "name": "rockslide",
+            "usage": 99.8
+          },
+          {
+            "name": "tailwind",
+            "usage": 91.5
+          },
+          {
+            "name": "dualwingbeat",
+            "usage": 91.2
+          },
+          {
+            "name": "icefang",
+            "usage": 60.6
+          },
+          {
+            "name": "protect",
+            "usage": 26.7
+          },
+          {
+            "name": "wideguard",
+            "usage": 26.6
+          },
+          {
+            "name": "ironhead",
+            "usage": 1.1
+          },
+          {
+            "name": "taunt",
+            "usage": 0.6
+          }
+        ],
+        "items": [
+          {
+            "name": "aerodactylite",
+            "usage": 100.0
+          }
+        ],
+        "abilities": [
+          {
+            "name": "toughclaws",
+            "usage": 100.0
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "kingambit",
+            "usage": 71.6
+          },
+          {
+            "name": "sylveon",
+            "usage": 67.0
+          },
+          {
+            "name": "garchomp",
+            "usage": 57.1
+          },
+          {
+            "name": "charizardmegay",
+            "usage": 56.5
+          },
+          {
+            "name": "farigiraf",
+            "usage": 42.7
+          },
+          {
+            "name": "basculegion",
+            "usage": 26.6
+          },
+          {
+            "name": "incineroar",
+            "usage": 18.1
+          },
+          {
+            "name": "sinistcha",
+            "usage": 9.8
+          }
+        ]
+      },
+      {
+        "pokemon": "Gholdengo",
+        "usage": 9.2,
+        "moves": [
+          {
+            "name": "makeitrain",
+            "usage": 99.5
+          },
+          {
+            "name": "shadowball",
+            "usage": 99.1
+          },
+          {
+            "name": "protect",
+            "usage": 87.3
+          },
+          {
+            "name": "nastyplot",
+            "usage": 72.4
+          },
+          {
+            "name": "powergem",
+            "usage": 23.1
+          },
+          {
+            "name": "thunderbolt",
+            "usage": 5.7
+          },
+          {
+            "name": "trick",
+            "usage": 4.7
+          },
+          {
+            "name": "focusblast",
+            "usage": 2.3
+          }
+        ],
+        "items": [
+          {
+            "name": "lifeorb",
+            "usage": 58.7
+          },
+          {
+            "name": "choicescarf",
+            "usage": 11.8
+          },
+          {
+            "name": "spelltag",
+            "usage": 7.3
+          },
+          {
+            "name": "metalcoat",
+            "usage": 5.6
+          },
+          {
+            "name": "focussash",
+            "usage": 4.9
+          },
+          {
+            "name": "leftovers",
+            "usage": 4.6
+          }
+        ],
+        "abilities": [
+          {
+            "name": "goodasgold",
+            "usage": 100.0
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "staraptormega",
+            "usage": 46.1
+          },
+          {
+            "name": "sinistcha",
+            "usage": 31.7
+          },
+          {
+            "name": "garchomp",
+            "usage": 27.2
+          },
+          {
+            "name": "whimsicott",
+            "usage": 26.4
+          },
+          {
+            "name": "milotic",
+            "usage": 23.6
+          },
+          {
+            "name": "tyranitarmega",
+            "usage": 23.3
+          },
+          {
+            "name": "excadrill",
+            "usage": 22.3
+          },
+          {
+            "name": "incineroar",
+            "usage": 20.0
+          }
+        ]
+      },
+      {
+        "pokemon": "Delphox-Mega",
+        "usage": 8.6,
+        "moves": [
+          {
+            "name": "heatwave",
+            "usage": 99.5
+          },
+          {
+            "name": "protect",
+            "usage": 99.3
+          },
+          {
+            "name": "nastyplot",
+            "usage": 76.8
+          },
+          {
+            "name": "psychic",
+            "usage": 50.5
+          },
+          {
+            "name": "psyshock",
+            "usage": 46.8
+          },
+          {
+            "name": "substitute",
+            "usage": 8.0
+          },
+          {
+            "name": "encore",
+            "usage": 4.8
+          },
+          {
+            "name": "scorchingsands",
+            "usage": 2.7
+          }
+        ],
+        "items": [
+          {
+            "name": "delphoxite",
+            "usage": 100.0
+          }
+        ],
+        "abilities": [
+          {
+            "name": "levitate",
+            "usage": 100.0
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "sinistcha",
+            "usage": 67.5
+          },
+          {
+            "name": "sneasler",
+            "usage": 65.4
+          },
+          {
+            "name": "incineroar",
+            "usage": 62.8
+          },
+          {
+            "name": "kingambit",
+            "usage": 57.3
+          },
+          {
+            "name": "blastoisemega",
+            "usage": 43.9
+          },
+          {
+            "name": "garchomp",
+            "usage": 18.6
+          },
+          {
+            "name": "floettemega",
+            "usage": 16.1
+          },
+          {
+            "name": "whimsicott",
+            "usage": 14.7
+          }
+        ]
+      },
+      {
+        "pokemon": "Blastoise-Mega",
+        "usage": 8.5,
+        "moves": [
+          {
+            "name": "waterspout",
+            "usage": 96.4
+          },
+          {
+            "name": "darkpulse",
+            "usage": 93.2
+          },
+          {
+            "name": "protect",
+            "usage": 65.4
+          },
+          {
+            "name": "shellsmash",
+            "usage": 62.8
+          },
+          {
+            "name": "aurasphere",
+            "usage": 34.2
+          },
+          {
+            "name": "fakeout",
+            "usage": 27.2
+          },
+          {
+            "name": "icebeam",
+            "usage": 14.0
+          },
+          {
+            "name": "waterpulse",
+            "usage": 4.5
+          }
+        ],
+        "items": [
+          {
+            "name": "blastoisinite",
+            "usage": 100.0
+          }
+        ],
+        "abilities": [
+          {
+            "name": "megalauncher",
+            "usage": 100.0
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "sinistcha",
+            "usage": 63.5
+          },
+          {
+            "name": "sneasler",
+            "usage": 60.7
+          },
+          {
+            "name": "kingambit",
+            "usage": 55.7
+          },
+          {
+            "name": "incineroar",
+            "usage": 55.4
+          },
+          {
+            "name": "delphoxmega",
+            "usage": 44.2
+          },
+          {
+            "name": "farigiraf",
+            "usage": 23.0
+          },
+          {
+            "name": "basculegion",
+            "usage": 13.8
+          },
+          {
+            "name": "maushold",
+            "usage": 12.9
+          }
+        ]
+      },
+      {
+        "pokemon": "Swampert-Mega",
+        "usage": 8.5,
+        "moves": [
+          {
+            "name": "protect",
+            "usage": 98.2
+          },
+          {
+            "name": "wavecrash",
+            "usage": 97.6
+          },
+          {
+            "name": "icepunch",
+            "usage": 84.6
+          },
+          {
+            "name": "earthquake",
+            "usage": 73.4
+          },
+          {
+            "name": "highhorsepower",
+            "usage": 29.0
+          },
+          {
+            "name": "rockslide",
+            "usage": 4.3
+          },
+          {
+            "name": "flipturn",
+            "usage": 3.8
+          },
+          {
+            "name": "knockoff",
+            "usage": 2.4
+          }
+        ],
+        "items": [
+          {
+            "name": "swampertite",
+            "usage": 100.0
+          }
+        ],
+        "abilities": [
+          {
+            "name": "swiftswim",
+            "usage": 100.0
+          }
+        ],
+        "tera": [],
+        "teammates": [
+          {
+            "name": "archaludon",
+            "usage": 83.7
+          },
+          {
+            "name": "pelipper",
+            "usage": 73.2
+          },
+          {
+            "name": "sinistcha",
+            "usage": 37.4
+          },
+          {
+            "name": "grimmsnarl",
+            "usage": 35.8
+          },
+          {
+            "name": "incineroar",
+            "usage": 26.7
+          },
+          {
+            "name": "politoed",
+            "usage": 19.3
+          },
+          {
+            "name": "gengarmega",
+            "usage": 18.2
+          },
+          {
+            "name": "metagrossmega",
+            "usage": 17.7
+          }
+        ]
+      }
+    ]
+  }
+}
